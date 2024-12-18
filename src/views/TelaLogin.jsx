@@ -6,17 +6,18 @@ export default function LoginUsuario(){
 
     const tratarLogin = () => {
         console.log("Voce logou. Supreso?")
+        navegador("/TelaPrincipal")
     };
 
     const voltarCadastro = () => {
-        navegador("/")
+        navegador("/TelaPrincipal")
     };
 
     return (
         <>
             <Button variant="text" onClick={voltarCadastro}>Voltar </Button><br/>
-            <TextField id="outlined-basic" label="Email" variant="outlined" /><br/>
-            <TextField id="outlined-basic" label="Senha" variant="outlined" /><br/>
+            <TextField required id="outlined-basic" label="Email" variant="outlined" /><br/>
+            <TextField required id="outlined-basic" label="Senha" variant="outlined" /><br/>
             <Button variant="text" onClick={tratarLogin}>Entrar</Button><br/>
         </>
     )
