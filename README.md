@@ -20,4 +20,10 @@ npm run dev
 
 # Estrutura do diretório
 
+- node_modules: Bibliotecas do node
+- src/components: Componentes reutilizáveis criados para o website.
+- src/style: Arquivos css que tratam da estilização das paginas.
+- src/views: Conjunto de paginas do website
+- src/assets/images: Imagens utilizadas no website. 
+
 # Funcionalidades

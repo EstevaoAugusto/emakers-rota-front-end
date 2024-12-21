@@ -4,7 +4,7 @@ import styles from "../style/Conta.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function TelaConta() {
-    let navegador = useNavigate();
+    let navegador = useNavigate(); // trata da navegação
 
     const sairConta = () => {
         navegador("/")
@@ -22,10 +22,12 @@ export default function TelaConta() {
         <>
             <Header/>
             <section >
+                    {/* Seção que conta as informações do usuário */}
                     <h1>Olá, Nome do Usuário</h1><br/>
                     <h2>Seu email é nomeusuario@email.com</h2><br/>
                     <h2>Seu CPF é 123.456.789-00</h2><br/><br/>
 
+                    {/* Pilha de botoes da conta*/}
                     <Stack 
                         spacing={2}
                         direction={"column"}
