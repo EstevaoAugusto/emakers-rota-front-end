@@ -6,11 +6,11 @@ export default function LoginUsuario(){
 
     const tratarLogin = () => {
         console.log("Voce logou. Supreso?")
-        navegador("/TelaPrincipal")
+        navegador("/TelaConta")
     };
 
     const voltarCadastro = () => {
-        navegador("/TelaPrincipal")
+        navegador("/")
     };
 
     return (

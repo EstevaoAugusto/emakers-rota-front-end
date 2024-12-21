@@ -14,6 +14,7 @@ cd emakers-rota-front-end
 npm install
 npm install react-router-dom
 npm install @mui/material @emotion/react @emotion/styled
+npm install styled-components
 npm run dev
 ```
 

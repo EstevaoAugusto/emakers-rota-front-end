@@ -1,0 +1,9 @@
+.flex_container_botoes {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao {
+    font-size: 100px;
+    width: auto;
+}

@@ -1,0 +1,28 @@
+.cabecario {
+    margin: -2rem;
+    padding: 60px;
+    text-align: center;
+    background: #FBF6F0;
+    color: white;
+    font-size: 30px;
+    border-style: solid;
+    border-width: 1rem;
+    
+}
+
+.corpo{
+  
+}
+
+.caixaTexto {
+  
+}
+
+.botao{
+  align-items: center;
+}
+
+.imagemLogo{
+  
+  height: 10rem;
+}
