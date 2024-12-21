@@ -1,3 +1,4 @@
+/* Estilização do Header */
 .cabecario {
     margin: -2rem;
     padding: 60px;
@@ -8,14 +9,6 @@
     border-style: solid;
     border-width: 1rem;
     
-}
-
-.corpo{
-  
-}
-
-.caixaTexto {
-  
 }
 
 .botao{
