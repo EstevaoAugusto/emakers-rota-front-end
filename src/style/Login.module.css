@@ -1,0 +1,25 @@
+.secaoCadastro {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+    
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.secaoCadastro > div {
+    width: auto;
+    margin: 10px;
+    padding: 10px
+}
+
+.secaoCadastro img {
+    height: auto; 
+    width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
+}
+
+body{
+    background-color: #FBF8F4;
+    text-align: center;
+}
