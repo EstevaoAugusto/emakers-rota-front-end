@@ -23,7 +23,7 @@ h1{
     width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
 }
 
-*{
+body{
     background-color: #FBF8F4;
     text-align: center;
 }

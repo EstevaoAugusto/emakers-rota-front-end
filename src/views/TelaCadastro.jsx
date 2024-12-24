@@ -30,7 +30,7 @@ const Cadastro = () => {
             <section className={styles.secaoCadastro}>
                 <h1>Registrar</h1><br/>
                 <div>
-                <TextField className={styles.botao} required id="outlined-basic" label="Nome" value={usuario.Nome} variant="outlined"/><br/>
+                <TextField required id="outlined-basic" label="Nome" value={usuario.Nome} variant="outlined"/><br/>
                 
                 <TextField required id="outlined-basic" label="CPF" value={usuario.CPF} variant="outlined" /><br/>
                 <TextField required id="outlined-basic" label="Email" value={usuario.Email} variant="outlined" /><br/>
