@@ -1,7 +1,8 @@
 import { Button ,TextField } from "@mui/material";
-import "../style/Cadastro.css"
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect  } from "react";
+import { useState } from "react";
+import styles from "../style/Cadastro.module.css"
+import LoginCadastro from "../assets/images/IlustracaoLoginCadastro.png";
 
 const Cadastro = () => {
     const [usuario, setUsuario] = useState(     // Informações de um usuário inicialmente vazio 
@@ -24,19 +25,27 @@ const Cadastro = () => {
 
     return(
         <>
-            <h1>Registrar</h1>
             {/* Conjunto de caixas de textos a serem preenchidas. 
                 O valor digitado nelas resultara na criação de um novo usuário.*/}
-            <TextField required id="outlined-basic" label="Nome" value={usuario.Nome} variant="outlined"/><br/>
-            <TextField required id="outlined-basic" label="CPF" value={usuario.CPF} variant="outlined" /><br/>
-            <TextField required id="outlined-basic" label="Email" value={usuario.Email} variant="outlined" /><br/>
-            <TextField required id="outlined-basic" label="Senha" value={usuario.Senha} variant="outlined" /><br/>
-            <TextField required id="outlined-basic" label="Confirmar Senha" value={usuario.SenhaConfirmacao} variant="outlined" /><br/>
-            
-            {/* Cadastra um novo usuário.*/}
-            <Button variant="contained">Cadastrar</Button><br/>
-            {/* Realiza login de usuário*/}
-            <Button variant="text" onClick={navegarLogin}>Fazer Login</Button>
+            <section className={styles.secaoCadastro}>
+                <h1>Registrar</h1><br/>
+                <div>
+                <TextField className={styles.botao} required id="outlined-basic" label="Nome" value={usuario.Nome} variant="outlined"/><br/>
+                
+                <TextField required id="outlined-basic" label="CPF" value={usuario.CPF} variant="outlined" /><br/>
+                <TextField required id="outlined-basic" label="Email" value={usuario.Email} variant="outlined" /><br/>
+                <TextField required id="outlined-basic" label="Senha" value={usuario.Senha} variant="outlined" /><br/>
+                <TextField required id="outlined-basic" label="Confirmar Senha" value={usuario.SenhaConfirmacao} variant="outlined" /><br/>
+                {/* Cadastra um novo usuário.*/}
+                <Button variant="contained">Cadastrar</Button><br/>
+                {/* Realiza login de usuário*/}
+                <Button variant="text" onClick={navegarLogin}>Fazer Login</Button>
+                </div>
+
+                <div>
+                    <img src={LoginCadastro} alt="Ilustração Login Cadastro"/>
+                </div>
+            </section>
         </>
     )
 }
