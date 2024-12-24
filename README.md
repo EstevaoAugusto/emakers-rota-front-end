@@ -12,9 +12,6 @@ Website feito durante o meu período de trainee na empresa junior Emakers.
 git clone git@github.com:EstevaoAugusto/emakers-rota-front-end.git
 cd emakers-rota-front-end
 npm install
-npm install react-router-dom
-npm install @mui/material @emotion/react @emotion/styled
-npm install styled-components
 npm run dev
 ```
 
