@@ -28,8 +28,8 @@ const Cadastro = () => {
             {/* Conjunto de caixas de textos a serem preenchidas. 
                 O valor digitado nelas resultara na criação de um novo usuário.*/}
             <section className={styles.secaoCadastro}>
-                <h1>Registrar</h1><br/>
                 <div>
+                <h1>Registrar</h1><br/>
                 <TextField required id="outlined-basic" label="Nome" value={usuario.Nome} variant="outlined"/><br/>
                 
                 <TextField required id="outlined-basic" label="CPF" value={usuario.CPF} variant="outlined" /><br/>
