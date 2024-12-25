@@ -18,22 +18,38 @@ const Header = () => {
     }
 
     return (   
-        <body>
-            <div className={styles.cabecario}>
+        <header className={styles.flexContainer}>
+            <div>
                 <img className={styles.imagemLogo} src="src\assets\images\Logo.png" onClick={navegarPrincipal}></img>
-                
-                {/* Conjunto de botoes. 
-                    Em teoria, cada um deles leva a uma pagina do site diferente.
-                    Na realidade, apenas alguns te levaram a uma pagina. */}
+            </div>
+            {/* Conjunto de botoes. 
+                Em teoria, cada um deles leva a uma pagina do site diferente.
+                Na realidade, apenas alguns te levaram a uma pagina. */}
 
+            <div>
                 <Button className={styles.botao} variant="text">Lançamentos</Button>
+            </div>
+            
+            <div>
                 <Button className={styles.botao} variant="text" onClick={navegarPopulares}>Populares</Button>
+            </div>
+            
+            <div>
                 <Button className={styles.botao} variant="text">Gêneros</Button>
+            </div>
+            
+            <div>
                 <Button className={styles.botao} variant="text">Promoçoes</Button>
+            </div>
+            
+            <div>
                 <Button className={styles.botao} variant="text" onClick={navegarConta}>Conta</Button>
+            </div>
+            
+            <div>
                 <TextField className={styles.caixaTexto} id="outlined-basic" label=""  variant="outlined" />
-            </div >
-        </body>
+            </div>
+        </header>
     )
 }
 
