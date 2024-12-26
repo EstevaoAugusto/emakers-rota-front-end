@@ -19,7 +19,11 @@
     width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
 }
 
+.conteudo {
+    align-items: center;
+}
+
 body{
     background-color: #FBF8F4;
-    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }

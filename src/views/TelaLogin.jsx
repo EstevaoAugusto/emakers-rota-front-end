@@ -19,12 +19,14 @@ export default function LoginUsuario(){
         <>
             <section className={styles.secaoCadastro}>
                 <div>
-                    <h1>Login</h1>
-                    <Button variant="text" onClick={voltarCadastro}>Voltar </Button>
-                    <TextField required id="outlined-basic" label="Email" variant="outlined" />
-                    <TextField required id="outlined-basic" label="Senha" variant="outlined" />
-                    <Button variant="text" onClick={tratarLogin}>Entrar</Button><br/>
-                    <Button variant="text" >Esqueci a Senha</Button>
+                    <div className={styles.conteudo}>
+                        <h1>Login</h1>
+                        <Button variant="text" onClick={voltarCadastro}>Voltar </Button>
+                        <TextField required id="outlined-basic" label="Email" variant="outlined" />
+                        <TextField required id="outlined-basic" label="Senha" variant="outlined" />
+                        <Button variant="text" onClick={tratarLogin}>Entrar</Button>
+                        <Button variant="text" >Esqueci a Senha</Button>
+                    </div>
                 </div>
 
                 <div>

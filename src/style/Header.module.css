@@ -21,7 +21,7 @@
   align-items: center;
 }
 
-img{
+.imagemLogo{
   cursor: pointer;
   height: 10rem;
 }
