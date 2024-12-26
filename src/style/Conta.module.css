@@ -1,6 +1,37 @@
-.flex_container_botoes {
-    display: flex;
-    flex-direction: column;
+.grid_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.txt_item {
+    margin-right: 300px;
+    color: #4B626C;
+}
+
+.jogos_adicionados {
+    color: white;
+    background-color: #4B626C;
+}
+
+.grid_container_jogos {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid_container_jogos > div {
+    padding: 10px;
+    margin: 10px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.grid_container_jogos img {
+    width: 50%;
+    max-width: 70%;
+    height: auto;
 }
 
 .botao {
