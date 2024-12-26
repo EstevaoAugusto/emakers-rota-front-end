@@ -6,6 +6,9 @@
     width: 100%; 
 }
 
+.footerTxt {
+    text-align: center;
+}
 
 .textoRedirecionavel {
     cursor: pointer;
@@ -27,6 +30,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
+    font-size: 16px;
 }
 
 .container > div {

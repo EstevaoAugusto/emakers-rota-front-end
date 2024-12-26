@@ -43,7 +43,7 @@ const Footer = () => {
                     <p>Shopping X, Lavras - MG </p>
                 </div>
             </div>
-            <p id="textoFooter">2024 Game Dame | By Emakers Júnior</p>
+            <p className={styles.footerTxt}>2024 Game Dame | By Emakers Júnior</p>
             
         </footer>
     )
