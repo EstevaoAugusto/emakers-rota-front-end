@@ -6,6 +6,12 @@ Website feito durante o meu período de trainee na empresa junior Emakers.
 - React (nisso inclui HTML, CSS, Javascript e Node.js)
 - Vue
 
+# Bibliotecas usadas
+
+- Styled Componentes
+- React Router Dom
+- Mui Components
+
 # Instalação
 
 ```
