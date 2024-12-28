@@ -19,6 +19,12 @@
     width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
 }
 
+.container_form_flex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .conteudo {
     align-items: center;
 }
