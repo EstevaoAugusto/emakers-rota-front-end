@@ -11,7 +11,7 @@ const TelaPopulares = () => {
                 <h1>Populares</h1>
                 <div className={styles.container_flex_jogos_widescreen}>
                     <div className={styles.item}>
-                        <img src="src\assets\images\widescreen\DaysGone.png" alt="Jogo Days Gone" srcset="" />
+                        <img src="src\assets\images\widescreen\GodOfWar2016.png" alt="Jogo God Of War" srcset="" />
                         <div className={styles.texto_container}>
                             <h1>God of War</h1>
                             <p>
@@ -40,6 +40,7 @@ const TelaPopulares = () => {
                     <div className={styles.item}>
                         <img src="src\assets\images\widescreen\DaysGone.png" alt="Jogo Days Gone" srcset="" />
                         <div className={styles.texto_container}>
+                            <h1>Days Gone</h1>
                             <p>
                             Days Gone é um jogo de ação e aventura em mundo aberto que se passa em um ambiente adverso dois anos 
                             após uma pandemia mundial devastadora.Entre na pele do antigo motociclista fora da lei Deacon St. John, 

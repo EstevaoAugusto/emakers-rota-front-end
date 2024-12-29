@@ -1,7 +1,7 @@
 .container_flex_jogos_widescreen {
     display: flex;                  /* Define o contêiner como flex */
     flex-direction: column;         /* Alinha os itens verticalmente */
-    gap: 20px;                      /* Espaçamento entre os itens */
+    gap: 5rem;                      /* Espaçamento entre os itens */
     align-items: center;            /* Alinha os itens ao centro horizontalmente */
     padding: 20px;                  /* Adiciona padding ao redor do contêiner */
     background-color: #FBF6F0;      /* Cor de fundo */
@@ -24,4 +24,9 @@
     flex-direction: column;
     width: 50%;
     font-size: 20px;
+    color: #4B626C;
+}
+
+h1 {
+    color: #4B626C;
 }
