@@ -76,6 +76,7 @@ const Cadastro = () => {
             setUsuario(valorHTML);
             console.log(usuario)
             window.alert("Usuário cadastrado com sucesso!");
+            navegador("/TelaConta");
         }
     }
 

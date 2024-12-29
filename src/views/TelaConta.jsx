@@ -1,7 +1,10 @@
 import Header from "../components/Header.jsx";
+import ImageViewer from "../components/ImageViewer.jsx";
 import { Button, Stack } from "@mui/material";
 import styles from "../style/Conta.module.css";
 import { useNavigate } from "react-router-dom";
+
+const postersGames = "../src/assets/images/postersGames";
 
 export default function TelaConta() {
     let navegador = useNavigate(); // trata da navegação
@@ -48,19 +51,19 @@ export default function TelaConta() {
                     <h1>Jogos adquiridos:</h1>
                     <div className={styles.grid_container_jogos}>
                         <div>
-                            <img src="src\assets\images\games\BobEsponjaJogo.png" alt="Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated"></img>
+                            <img src="src\assets\images\posters\BattleForBikiniBottom.png" alt="Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated"></img>
                             <p>100/100</p>
                         </div>
                         <div>
-                            <img src="src\assets\images\games\MarteJogo.png" alt="Jogo Deliver Us Mars" />
+                            <img src="src\assets\images\posters\Mars.png" alt="Jogo Deliver Us Mars" />
                             <p>95/100</p>
                         </div>
                         <div>
-                            <img src="src\assets\images\games\KratosJogo.png" alt="Jogo God Of War (2016)" />
+                            <img src="src\assets\images\posters\GodOfWar2016.png" alt="Jogo God Of War (2016)" />
                             <p>75/100</p>
                         </div>
                         <div>
-                            <img src="src\assets\images\games\KojimaJogo.png" alt="Jogo Death Strading"></img>
+                            <img src="src\assets\images\posters\DeathStranding.png" alt="Jogo Death Strading"></img>
                             <p>Adicionar Avaliação</p>
                         </div>
                     </div>    
