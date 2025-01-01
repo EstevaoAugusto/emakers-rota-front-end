@@ -4,9 +4,11 @@ import Login from './views/TelaLogin.jsx';
 import Conta from './views/TelaConta.jsx';
 import Populares from './views/TelaPopulares.jsx';
 import Principal from './views/TelaPrincipal.jsx';
+import { useEffect } from 'react';
 
 function App() {
-  
+  document.title = "Front-End Emakers"
+
   /*  
       App.jsx controla as rotas do website
       O componente Routes contem um conjunto de Route(rotas)
