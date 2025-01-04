@@ -1,19 +1,65 @@
-.secaoCadastro {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.secaoCadastro img {
-    height: auto; 
-    width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
+/* Por definição, o tamanho da fonte é 16px*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-    background-color: #FBF8F4;
+    width: 100%; /* Garante que o body ocupe toda a largura */
+    height: 100%; /* Garante que o body ocupe toda a altura */
     font-family: 'Montserrat', sans-serif;
+    color: #4B626C;
+    background-color: #FFFFFF;
+}
+
+
+h1 {
+    font-size: 64px;
+}
+
+.containerFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.containerGeral {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+    height: 100%;
+}
+
+.img_container {
+    width: 100%; /* A largura do contêiner será 100% da janela */
+    height: 100vh; /* Altura igual à altura da janela */
+    margin: 0 auto; /* Centraliza o contêiner */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    position: relative;
+    display: block; 
+  }
+  
+  .img_container img {
+    width: auto; /* Ajusta a largura automaticamente */
+    height: 100%; /* A altura será igual à do contêiner */
+    object-fit: cover; /* Preenche o contêiner sem distorcer a imagem */
+    display: block; /* Remove espaço em branco ao redor da imagem */
+    margin: 0 auto;
+  }
+  
+@media (max-width: 770px) {
+    .containerGeral {
+        flex-direction: column-reverse;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
 }

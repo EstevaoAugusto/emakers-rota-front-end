@@ -6,6 +6,25 @@ import LoginCadastro from "../assets/images/IlustracaoLoginCadastro.png";
 
 
 const Cadastro = () => {
+
+    const estiloCampo = {
+        backgroundColor: '#EFEFEF', // Fundo azul-cinza
+        borderRadius: '5px', // Borda arredondada
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                boxShadow: '0 0 10px 2px rgba(239, 239, 239, 1)',
+                borderColor: 'transparent',
+            },
+            '&:hover fieldset': {
+                borderColor: '#1e90ff', // Cor da borda ao passar o mouse
+            },
+            '&.Mui-focused fieldset': {
+                boxShadow: '0 0 10px 2px rgba(30, 144, 255, 0.7)', // Borda azul borrada
+                borderColor: '#1e90ff', // Cor da borda ao focar
+            },
+        }
+    }
+
     const [usuario, setUsuario] = useState(     // Informações de um usuário inicialmente vazio 
         {                                       // É preciso realizar o cadastro de um usuario
             Nome: "",
@@ -90,22 +109,54 @@ const Cadastro = () => {
         <>
             {/* Conjunto de caixas de textos a serem preenchidas. 
                 O valor digitado nelas resultara na criação de um novo usuário.*/}
-            <section className={styles.secaoCadastro}>
-                <form action="">
-                    <h1>Registrar</h1><br/>
+            <section className={styles.containerGeral}>
+                <form className={styles.containerFormulario}>
+                    <h1>Registrar</h1>
                 
-                    <TextField required helperText={erros.erroNome} label="Nome" name="Nome" value={valorHTML.Nome} onChange={handleChange} variant="outlined"/><br/>
-                    <TextField required helperText={erros.erroCPF} label="CPF" name="CPF" value={valorHTML.CPF} onChange={handleChange} variant="outlined" slotProps={{ htmlInput: { maxLength: 12,  /* Limita o número de caracteres para 50*/ }}}/><br/>
-                    <TextField required helperText={erros.erroEmail} label="Email" name="Email" value={valorHTML.Email} onChange={handleChange} variant="outlined" /><br/>
-                    <TextField required helperText={erros.erroSenha} type="password" label="Senha" name="Senha" value={valorHTML.Senha} onChange={handleChange} variant="outlined" /><br/>
-                    <TextField required helperText={erros.erroSenhaConfirmacao} type="password" label="SenhaConfirmacao" name="SenhaConfirmacao" value={valorHTML.SenhaConfirmacao} onChange={handleChange} variant="outlined" /><br/>
+                    <div>
+                        <TextField required helperText={erros.erroNome} label="Nome" name="Nome" 
+                        value={valorHTML.Nome} onChange={handleChange} variant="outlined"
+                        sx={estiloCampo}/>
+                    </div>
+
+                    <div>
+                        <TextField required helperText={erros.erroEmail} label="Email" name="Email" 
+                        value={valorHTML.Email} onChange={handleChange} variant="outlined" 
+                        sx={estiloCampo}/>
+                    </div>
+
+                    <div>
+                        <TextField required helperText={erros.erroCPF} label="CPF" name="CPF" 
+                        value={valorHTML.CPF} onChange={handleChange} variant="outlined" slotProps={{ htmlInput: { maxLength: 12,  /* Limita o número de caracteres para 50*/ }}} 
+                        sx={estiloCampo}/>
+                    </div>
+                    
+
+                    <div>
+                        <TextField required helperText={erros.erroSenha} type="password" label="Senha" name="Senha" 
+                        value={valorHTML.Senha} onChange={handleChange} variant="outlined"
+                        sx={estiloCampo}/>
+                    </div>
+                    
+                    <div>
+                        <TextField required helperText={erros.erroSenhaConfirmacao} type="password" label="SenhaConfirmacao"
+                        name="SenhaConfirmacao" value={valorHTML.SenhaConfirmacao} onChange={handleChange} variant="outlined"
+                        sx={estiloCampo}/>
+                    </div>
+
                     {/* Cadastra um novo usuário.*/}
-                    <Button variant="contained" onClick={handleRegistrar}>Cadastrar</Button><br/>
+                    
+                    <div>
+                        <Button variant="contained" onClick={handleRegistrar}>Cadastrar</Button>
+                    </div>
                     {/* Realiza login de usuário*/}
-                    <Button variant="text" onClick={navegarLogin}>Fazer Login</Button>
+                    
+                    <div>
+                        <Button variant="text" onClick={navegarLogin}>Fazer Login</Button>
+                    </div>
                 </form>
 
-                <div>
+                <div className={styles.img_container}>
                     <img src={LoginCadastro} alt="Ilustração Login Cadastro"/>
                 </div>
             </section>
