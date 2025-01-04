@@ -37,6 +37,14 @@ h1 {
     height: 100%;
 }
 
+.opcaoCadastrar {
+    text-align: end;
+}
+
+.opcaoEntrar {
+    text-align: start;
+}
+
 .img_container {
     width: 100%; /* A largura do contêiner será 100% da janela */
     height: 100vh; /* Altura igual à altura da janela */
@@ -46,20 +54,29 @@ h1 {
     display: block; 
   }
   
-  .img_container img {
-    width: auto; /* Ajusta a largura automaticamente */
-    height: 100%; /* A altura será igual à do contêiner */
+.img_container img {
+    width: 100%; /* A largura da imagem será 100% do contêiner */
+    height: auto; /* A altura será ajustada automaticamente para manter a proporção */
     object-fit: cover; /* Preenche o contêiner sem distorcer a imagem */
-    display: block; /* Remove espaço em branco ao redor da imagem */
+    display: block;
     margin: 0 auto;
-  }
-  
-@media (max-width: 770px) {
+}
+
+@media (max-width: 920px) {
     .containerGeral {
         flex-direction: column-reverse;
     }
 
     h1 {
         font-size: 32px;
+    }
+
+    .img_container {
+        height: auto; /* A altura será ajustada automaticamente em telas pequenas */
+    }
+    
+    .img_container img {
+        width: 100%; /* A largura será 100% do contêiner */
+        height: auto; /* A altura se ajusta automaticamente */
     }
 }

@@ -1,29 +1,41 @@
-import { Button ,TextField } from "@mui/material";
+import { Button ,TextField, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useState } from "react";
 import styles from "../style/Cadastro.module.css"
 import LoginCadastro from "../assets/images/IlustracaoLoginCadastro.png";
 
+const estiloCampo = {
+    backgroundColor: '#EFEFEF', // Fundo azul-cinza
+    borderRadius: '5px', // Borda arredondada
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            boxShadow: '0 4 20px 2px rgba(0, 0, 0, 0.25)',
+            borderColor: 'transparent',
+        },
+        '&:hover fieldset': {
+            borderColor: '#1e90ff', // Cor da borda ao passar o mouse
+        },
+        '&.Mui-focused fieldset': {
+            boxShadow: '0 0 10px 2px rgba(30, 144, 255, 0.7)', // Borda azul borrada
+            borderColor: '#1e90ff', // Cor da borda ao focar
+        },
+    }
+}
+
+const estiloIcone = {
+    width: '60px',            // Largura do botão
+    height: '60px',           // Altura do botão
+    padding: '10px',          // Padding interno do botão
+    fontSize: '30px',         // Tamanho do ícone
+    color: '#4B626C',           // Cor do ícone
+    borderRadius: '50%',      // Botão redondo
+    '&:hover': {
+        backgroundColor: '#77a39a', // Cor de fundo ao passar o mouse
+    }
+}
 
 const Cadastro = () => {
-
-    const estiloCampo = {
-        backgroundColor: '#EFEFEF', // Fundo azul-cinza
-        borderRadius: '5px', // Borda arredondada
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                boxShadow: '0 0 10px 2px rgba(239, 239, 239, 1)',
-                borderColor: 'transparent',
-            },
-            '&:hover fieldset': {
-                borderColor: '#1e90ff', // Cor da borda ao passar o mouse
-            },
-            '&.Mui-focused fieldset': {
-                boxShadow: '0 0 10px 2px rgba(30, 144, 255, 0.7)', // Borda azul borrada
-                borderColor: '#1e90ff', // Cor da borda ao focar
-            },
-        }
-    }
 
     const [usuario, setUsuario] = useState(     // Informações de um usuário inicialmente vazio 
         {                                       // É preciso realizar o cadastro de um usuario
@@ -54,7 +66,6 @@ const Cadastro = () => {
     );
 
     const handleChange = (e) => {
-        console.log(valorHTML)
         const { name, value } = e.target;
         setValorHTML({ ...valorHTML, [name]: value });
     };
@@ -146,12 +157,14 @@ const Cadastro = () => {
 
                     {/* Cadastra um novo usuário.*/}
                     
-                    <div>
-                        <Button variant="contained" onClick={handleRegistrar}>Cadastrar</Button>
+                    <div className={styles.opcaoCadastrar}>
+                        <IconButton onClick={handleRegistrar} sx={estiloIcone} >
+                            <ArrowForwardIcon/>
+                        </IconButton>
                     </div>
                     {/* Realiza login de usuário*/}
                     
-                    <div>
+                    <div className={styles.opcaoEntrar}>
                         <Button variant="text" onClick={navegarLogin}>Fazer Login</Button>
                     </div>
                 </form>
