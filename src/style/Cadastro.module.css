@@ -10,12 +10,13 @@ body{
     height: 100%; /* Garante que o body ocupe toda a altura */
     font-family: 'Montserrat', sans-serif;
     color: #4B626C;
-    background-color: #FFFFFF;
+    background-color: #FBF8F4;
 }
 
 
 h1 {
     font-size: 64px;
+    font-weight: 400;
 }
 
 .containerFormulario {
@@ -33,8 +34,15 @@ h1 {
     align-items: center;
     margin: auto;
     text-align: center;
-    width: 90%;
+    width: 80%;
     height: 100%;
+}
+
+.containerLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end; /* Alinha os itens no final do container */
 }
 
 .opcaoCadastrar {
@@ -48,19 +56,33 @@ h1 {
 .img_container {
     width: 100%; /* A largura do contêiner será 100% da janela */
     height: 100vh; /* Altura igual à altura da janela */
-    margin: 0 auto; /* Centraliza o contêiner */
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    margin: auto; /* Centraliza o contêiner */
     position: relative;
     display: block; 
-  }
-  
-.img_container img {
-    width: 100%; /* A largura da imagem será 100% do contêiner */
-    height: auto; /* A altura será ajustada automaticamente para manter a proporção */
-    object-fit: cover; /* Preenche o contêiner sem distorcer a imagem */
-    display: block;
-    margin: 0 auto;
 }
+
+.img_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    .img_container {
+        height: 60vh; /* Reduz a altura para telas pequenas */
+    }
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 1200px) {
+    .img_container {
+        height: 100vh; /* Aumenta a altura para telas maiores */
+    }
+}
+
 
 @media (max-width: 920px) {
     .containerGeral {
@@ -69,6 +91,7 @@ h1 {
 
     h1 {
         font-size: 32px;
+        font-weight: 39.01;
     }
 
     .img_container {

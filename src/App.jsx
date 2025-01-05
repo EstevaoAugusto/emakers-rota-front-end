@@ -4,6 +4,7 @@ import Login from './views/TelaLogin.jsx';
 import Conta from './views/TelaConta.jsx';
 import Populares from './views/TelaPopulares.jsx';
 import Principal from './views/TelaPrincipal.jsx';
+import RecuperarConta from './views/TelaRecuperarConta.jsx';
 import { useEffect } from 'react';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/TelaPrincipal' element={<Principal/>}/>
           <Route path='/TelaConta' element={<Conta/>}/>
           <Route path='/TelaPopulares' element={<Populares/>} />
+          <Route path='/RecuperarConta' element={<RecuperarConta />}/>
         </Routes>
   )
 }
