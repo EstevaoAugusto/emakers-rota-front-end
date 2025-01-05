@@ -6,22 +6,14 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     let navegador = useNavigate(); // trata da navegação
 
-    const navegarPopulares = () => {
-        navegador("/TelaPopulares");
-    }
-
-    const navegarPrincipal = () => {
-        navegador("/TelaPrincipal");
-    }
-
-    const navegarConta = () => {
-        navegador("/TelaConta");
+    const navegar = (rota) =>{
+        navegador(rota);
     }
 
     return (   
         <header>
             <nav className={`${styles.flexContainer}`}>
-                <img className={styles.imagemLogo} src="src\assets\images\Logo.png" onClick={navegarPrincipal}></img>
+                <img className={styles.imagemLogo} src="src\assets\images\Logo.png" onClick={() => navegar("/TelaPrincipal")}></img>
             
                 {/* Conjunto de botoes. 
                 Em teoria, cada um deles leva a uma pagina do site diferente.
@@ -29,19 +21,19 @@ const Header = () => {
 
             
                 <div className={styles.exibirOpcao}>
-                    <Button className={styles.botao} variant="text">Lançamentos</Button>
+                    <Button className={styles.botao} variant="text" >Lançamentos</Button>
                 </div>
                 <div className={styles.exibirOpcao}>
-                    <Button className={styles.botao} variant="text" onClick={navegarPopulares}>Populares</Button>
+                    <Button className={styles.botao} variant="text" onClick={() => navegar("/TelaPopulares")}>Populares</Button>
                 </div>
                 <div className={styles.exibirOpcao}>
-                    <Button className={styles.botao} variant="text">Gêneros</Button>
+                    <Button className={styles.botao} variant="text" >Gêneros</Button>
                 </div>
                 <div className={styles.exibirOpcao}>    
                     <Button className={styles.botao} variant="text">Promoçoes</Button>
                 </div>
                 <div className={styles.exibirOpcao}>
-                    <Button className={styles.botao} variant="text" onClick={navegarConta}>Conta</Button>
+                    <Button className={styles.botao} variant="text" onClick={() => navegar("/TelaConta")}>Conta</Button>
                 </div>
                 <div className={styles.exibirOpcao}>
                     <TextField className={styles.caixaTexto} id="outlined-basic" label=""  variant="outlined" />

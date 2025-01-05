@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 870px) {
   .exibirOpcao {
     display: none; /* Esconde os itens de navegação */
   }
