@@ -1,10 +1,11 @@
 /* Estilização do Header */
 
-.exibirOpcao {
+
+.exibirOpcao { /* Serve para ter controle se as opçãos aparecem ou nao*/
   display: flex;
 }
 
-.flexContainer { /* Estilização do Header */
+.flexContainer { /* Configurações do Flex Container principal do Header*/
     position: relative;
     margin: auto;
     padding: 0;
@@ -26,21 +27,27 @@
   margin: 10px;
 }
 
-.menuToggle {
+.menuToggle { /* Estilização do menu hamburguer */
   display: none;
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
   margin-left: auto;
   align-items: center;
-  width: 50px;
+  width: 59px;
+  height: 40px;
 }
 
-.menuToggle .line {
+.line1, 
+.line2,
+.line3 { /* Estilização das linhas do menu hamburguer*/
   border-radius: 5px;
   border-style: solid;
   width: 100%;
+  margin: 6px 0;
   color: #4B626C;
+  background-color: #4B626C;
+  transition: all 0.3s ease; /* Adicionando transições para as animações */
 }
 
 .botao{
@@ -52,6 +59,7 @@
   max-height: 90px; /* Mantém a proporção da imagem */
   max-width: 90px; /* Garante que a largura da imagem não ultrapasse o contêiner */
   cursor: pointer;
+  display: flex;
 }
 
 @media (max-width: 870px) {
@@ -60,6 +68,49 @@
   }
   
   .menuToggle {
+    display: flex; /* Libera a visualização do Menu*/
+  }
+
+  /* fullscreen */
+
+  .flexContainer.mobile {
+    flex-direction: column;
+    background-color: #4B626C;
+    justify-content: center;
+  }
+  
+  .menuSection.on {
+    
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .exibirOpcao.hamburguer {
     display: flex;
   }
+
+  .imagemLogo.hidden {
+    display: none;
+  }
+
+  .line1.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    transform: rotate(-45deg) translateY(10px);
+  }
+
+  .line2.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    opacity: 0;
+  }
+
+  .line3.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    transform: rotate(45deg) translateY(-10px);
+
+  }
+
+
 }
