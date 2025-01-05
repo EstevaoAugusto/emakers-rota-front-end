@@ -4,16 +4,8 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
     let navegador = useNavigate(); // trata da navegação
 
-    const navegarPopulares = () => {
-        navegador("/TelaPopulares");
-    }
-
-    const navegarPrincipal = () => {
-        navegador("/TelaPrincipal");
-    }
-
-    const navegarConta = () => {
-        navegador("/TelaConta");
+    const navegar = (rota) => {
+        navegar(rota);
     }
 
     return ( 
@@ -25,19 +17,19 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h1>Game Dame</h1>
+                    <h1 className={styles.tituloH1}>Game Dame</h1>
                     <p>Seu próximo jogo começa aqui</p>
                 </div>
 
                 <div>
-                    <h1>Explorar</h1>
-                    <p className={styles.textoRedirecionavel} onClick={navegarPrincipal}>Início</p>
-                    <p className={styles.textoRedirecionavel} onClick={navegarPopulares}>Populares</p>
-                    <p className={styles.textoRedirecionavel} onClick={navegarConta}>Conta</p>
+                    <h1 className={styles.tituloH1}>Explorar</h1>
+                    <p className={`${styles.textoRedirecionavel}`} onClick={() => { navegar("/TelaPrincipal")}}>Início</p>
+                    <p className={`${styles.textoRedirecionavel}`} onClick={() => { navegar("/TelaPopulares")}}>Populares</p>
+                    <p className={`${styles.textoRedirecionavel}`} onClick={() => { navegar("/TelaConta")}}>Conta</p>
                 </div>
 
                 <div>
-                    <h1>Contato</h1>
+                    <h1 className={styles.tituloH1}>Contato</h1>
                     <p>gamegamedame@teste.com</p>
                     <p>(99) 9 9999-9999</p>
                     <p>Shopping X, Lavras - MG </p>
