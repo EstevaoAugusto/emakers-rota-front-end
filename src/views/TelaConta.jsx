@@ -1,6 +1,7 @@
 import Header from "../components/Header.jsx";
-import ImageViewer from "../components/ImageViewer.jsx";
-import { Button, Stack } from "@mui/material";
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import estiloIconeCarrinho from "../style/StyleMUI_IconeCarrinho.jsx";
+import { Button, Stack, IconButton } from "@mui/material";
 import styles from "../style/Conta.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +49,7 @@ export default function TelaConta() {
                 </div>
 
                 <div className={styles.jogos_adicionados}>
-                    <h1>Jogos adquiridos:</h1>
+                    <h2>Jogos adquiridos:</h2>
                     <div className={styles.grid_container_jogos}>
                         <div>
                             <img src="src\assets\images\posters\BattleForBikiniBottom.png" alt="Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated"></img>
@@ -65,6 +66,13 @@ export default function TelaConta() {
                         <div>
                             <img src="src\assets\images\posters\DeathStranding.png" alt="Jogo Death Strading"></img>
                             <p>Adicionar Avaliação</p>
+                        </div>
+                        {/* Cadastra um novo usuário.*/}
+                    
+                        <div >
+                            <IconButton sx={estiloIconeCarrinho}>
+                                <AddShoppingCartOutlinedIcon/>
+                            </IconButton>
                         </div>
                     </div>    
                 </div>

@@ -1,4 +1,5 @@
-import { Button, TextField } from "@mui/material"
+import { Button, TextField, InputAdornment } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 import styles from "../style/Header.module.css"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 

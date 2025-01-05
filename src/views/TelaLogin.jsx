@@ -13,13 +13,9 @@ export default function LoginUsuario(){
         window.alert("Nenhum usuário está cadastrado no momento. Crie uma conta.");
     };
 
-    const irEsqueceuSenha = () => {
-        navegador("/RecuperarConta");
+    const navegar = (rota) => {
+        navegador(rota);
     }
-
-    const voltarCadastro = () => {
-        navegador("/");
-    };
 
     return (
         <>
@@ -49,11 +45,11 @@ export default function LoginUsuario(){
 
                     <div className={styles.containerLogin}>
                         <div>
-                            <Button variant="text" onClick={voltarCadastro}>Criar Conta </Button>
+                            <Button variant="text" onClick={() => navegar("/")}>Criar Conta </Button>
                         </div>
 
                         <div>
-                            <Button variant="text" onClick={irEsqueceuSenha}>Esqueceu a Senha? </Button>
+                            <Button variant="text" onClick={() => navegar("/TelaRecuperarConta")}>Esqueceu a Senha? </Button>
                         </div>
                     </div>
                 </form>
