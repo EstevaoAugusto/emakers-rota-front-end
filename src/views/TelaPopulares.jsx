@@ -8,13 +8,13 @@ const TelaPopulares = () => {
         <>
             <Header/>
             <section>
-                <h1>Populares</h1>
+                <h1 className={styles.tituloH1}>Populares</h1>
                 <div className={styles.container_flex_jogos_widescreen}>
                     <div className={styles.item}>
                         <img src="src\assets\images\widescreen\GodOfWar2016.png" alt="Jogo God Of War" srcset="" />
                         <div className={styles.texto_container}>
-                            <h1>God of War</h1>
-                            <p>
+                            <h1 className={styles.tituloH1}>God of War</h1>
+                            <p className={styles.fraseP}>
                                 Kratos é pai novamente. Como mentor e protetor de Atreus, um filho determinado
                                 a ganhar seu respeito, ele é forçado a encarar e controlar a fúria que há muito tempo
                                 o define enquanto viaja por um mundo ameaçador com o seu filho. Com a vingança contra os
@@ -26,8 +26,8 @@ const TelaPopulares = () => {
                     </div>
                     <div className={styles.item}>
                         <div className={styles.texto_container}>
-                            <h1>Horizon Zero Dawn</h1>
-                            <p>
+                            <h1 className={styles.tituloH1}>Horizon Zero Dawn</h1>
+                            <p className={styles.fraseP}>
                                 Em um futuro distante, dominado por máquinas colossais que vagam pela Terra, a natureza retomou 
                                 as ruínas da nossa civilização esquecida e pequenos grupos de sobreviventes se dividem em diferentes tribos. 
                                 Empunhe o arco e a lança de Aloy, uma jovem caçadora de máquinas exilada da sua tribo, que parte em busca 
@@ -40,8 +40,8 @@ const TelaPopulares = () => {
                     <div className={styles.item}>
                         <img src="src\assets\images\widescreen\DaysGone.png" alt="Jogo Days Gone" srcset="" />
                         <div className={styles.texto_container}>
-                            <h1>Days Gone</h1>
-                            <p>
+                            <h1 className={styles.tituloH1}>Days Gone</h1>
+                            <p className={styles.fraseP}>
                             Days Gone é um jogo de ação e aventura em mundo aberto que se passa em um ambiente adverso dois anos 
                             após uma pandemia mundial devastadora.Entre na pele do antigo motociclista fora da lei Deacon St. John, 
                             um caçador de recompensas que tenta achar uma razão para viver numa terra cercada pela morte. 
