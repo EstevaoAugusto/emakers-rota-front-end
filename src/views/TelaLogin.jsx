@@ -21,7 +21,7 @@ export default function LoginUsuario(){
         <>
             <section className={styles.containerGeral}>
                 <form className={styles.containerFormulario}>
-                    <h1>Login</h1>
+                    <h1 className={styles.textoH1}>Login</h1>
 
                     <div>
                         <TextField required label="Email" name="Email" 

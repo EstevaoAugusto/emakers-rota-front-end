@@ -19,6 +19,10 @@ h1 {
     font-weight: 400;
 }
 
+.textoH1 {
+    color: #4B626C;
+}
+
 .containerFormulario {
     display: flex;
     flex-direction: column;

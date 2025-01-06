@@ -25,7 +25,7 @@ const RecuperarConta = () => {
         <>
             <section className={styles.containerGeral}>
                 <form className={styles.containerFormulario}>
-                    <h1>Recuperar Conta</h1>
+                    <h1 className={styles.textoH1}>Recuperar Conta</h1>
 
                     <div>
                         <TextField required label="Email" name="Email" 

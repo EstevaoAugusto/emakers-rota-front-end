@@ -95,7 +95,7 @@ const Cadastro = () => {
                 O valor digitado nelas resultara na criação de um novo usuário.*/}
             <section className={styles.containerGeral}>
                 <form className={styles.containerFormulario}>
-                    <h1>Registrar</h1>
+                    <h1 className={styles.textoH1}>Registrar</h1>
                 
                     <div>
                         <TextField required helperText={erros.erroNome} label="Nome" name="Nome" 
