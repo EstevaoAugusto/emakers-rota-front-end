@@ -1,3 +1,5 @@
+/* Estilização da pagina populares e dos jogos utilizados*/
+
 .container_flex_jogos_widescreen {
     display: flex;                  /* Define o contêiner como flex */
     flex-direction: column;         /* Alinha os itens verticalmente */
@@ -8,6 +10,7 @@
 }
 .item {
     display: flex;                  /* Flex dentro de cada item */
+    flex-direction: row;
     align-items: center;            /* Alinha imagem e texto verticalmente */
     gap: 10px;                      /* Espaçamento entre imagem e texto */
     padding: 10px;
@@ -18,15 +21,32 @@
     height: 50%;
 }
 
-.texto_container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+.texto {
+    text-align: center;
     width: 50%;
     font-size: 20px;
     color: #4B626C;
 }
 
+.texto > p {
+    text-justify: inter-word;
+    text-align: justify;
+}
+
 .tituloH1, .fraseP {
     color: #4B626C;
+}
+
+.tituloH1 {
+    font-size: 36px;
+}
+
+@media (max-width: 760px){
+    .item{
+        flex-direction: column;
+    }
+
+    .container_flex_jogos_widescreen{
+        padding: 10px
+    }
 }
