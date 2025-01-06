@@ -1,14 +1,13 @@
-h1 {
+.textoH1 {
     font-size: 48px;
+    color: #4B626C;
 }
   
-h2 {
+.textoH2 {
     font-size: 32px;
+    color: #4B626C;
 } 
-  
-h3 {
-    font-size: 16px;
-}
+
 
 .grid_container {
     display: grid;

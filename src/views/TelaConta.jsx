@@ -29,9 +29,9 @@ export default function TelaConta() {
                     <div className={styles.txt_item}>
                     {/* Seção que conta as informações do usuário */}
                     
-                    <h1>Olá, Nome do Usuário</h1><br/>
-                    <h2>Seu email é nomeusuario@email.com</h2><br/>
-                    <h2>Seu CPF é 123.456.789-00</h2><br/><br/>
+                    <h1 className={styles.textoH1}>Olá, Nome do Usuário</h1><br/>
+                    <h2 className={styles.textoH2}>Seu email é nomeusuario@email.com</h2><br/>
+                    <h2 className={styles.textoH2}>Seu CPF é 123.456.789-00</h2><br/><br/>
                     
                     
                     {/* Pilha de botoes da conta*/}
@@ -49,7 +49,7 @@ export default function TelaConta() {
                 </div>
 
                 <div className={styles.jogos_adicionados}>
-                    <h2>Jogos adquiridos:</h2>
+                    <h2 className={styles.textoH2}>Jogos adquiridos:</h2>
                     <div className={styles.grid_container_jogos}>
                         <div>
                             <img src="src\assets\images\posters\BattleForBikiniBottom.png" alt="Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated"></img>
