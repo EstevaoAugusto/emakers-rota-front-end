@@ -69,6 +69,8 @@
   
   .menuToggle {
     display: flex; /* Libera a visualização do Menu*/
+    align-items: center;
+    justify-content: center;
   }
 
   /* fullscreen */
@@ -77,12 +79,13 @@
     flex-direction: column;
     background-color: #4B626C;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
   .menuSection.on {
     
-    width: 100vw;
-    height: 100vh;
+    
   }
   
   .exibirOpcao.hamburguer {
