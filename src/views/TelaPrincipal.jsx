@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import styles from "../style/Principal.module.css";
+import Carrossel from "../components/Carrossel.jsx";
 
 const TelaPrincipal = () => {
     let navegador = useNavigate();
@@ -14,12 +15,14 @@ const TelaPrincipal = () => {
     return(
         <>
             <Header/>
-                <section id="secao1">
+                <section>
+                    <div id="secao1">
 
-                </section>
-                <section id="secao2" className={styles.conteudo}>
-                    <Button variant="contained" onClick={sairConta}>Sair da Conta</Button>
-
+                    </div>
+                    <div id="secao2" className={styles.conteudo}>
+                        <h1>Lançamentos</h1>
+                        <Carrossel/>
+                    </div>
                 </section>
             <Footer/>
         </>

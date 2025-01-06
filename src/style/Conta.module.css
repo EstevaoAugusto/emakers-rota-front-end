@@ -1,3 +1,14 @@
+.textoH1 {
+    font-size: 48px;
+    color: #4B626C;
+}
+  
+.textoH2 {
+    font-size: 32px;
+    color: #4B626C;
+} 
+
+
 .grid_container {
     display: grid;
     grid-template-columns: auto auto;

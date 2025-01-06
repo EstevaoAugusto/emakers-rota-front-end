@@ -1,0 +1,32 @@
+.container_flex_jogos_widescreen {
+    display: flex;                  /* Define o contêiner como flex */
+    flex-direction: column;         /* Alinha os itens verticalmente */
+    gap: 5rem;                      /* Espaçamento entre os itens */
+    align-items: center;            /* Alinha os itens ao centro horizontalmente */
+    padding: 20px;                  /* Adiciona padding ao redor do contêiner */
+    background-color: #FBF6F0;      /* Cor de fundo */
+}
+.item {
+    display: flex;                  /* Flex dentro de cada item */
+    align-items: center;            /* Alinha imagem e texto verticalmente */
+    gap: 10px;                      /* Espaçamento entre imagem e texto */
+    padding: 10px;
+}
+.item img {
+    object-fit: cover;              /* Garante que a imagem preencha o espaço corretamente */
+    width: 50%;
+    height: 50%;
+}
+
+.texto_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 20px;
+    color: #4B626C;
+}
+
+.tituloH1, .fraseP {
+    color: #4B626C;
+}

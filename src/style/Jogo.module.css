@@ -1,0 +1,22 @@
+.containerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #4B626C;
+}
+
+.textoConteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.textoConteudo p {
+    font-size: 20px;
+}
+
+.containerGrid img {
+    height: auto;
+    width: 100%;
+}

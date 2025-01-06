@@ -1,27 +1,116 @@
 /* Estilização do Header */
-.flexContainer {
-    margin: -2rem;
-    padding: 60px;
-    background: #FBF6F0;
+
+
+.exibirOpcao { /* Serve para ter controle se as opçãos aparecem ou nao*/
+  display: flex;
+}
+
+.flexContainer { /* Configurações do Flex Container principal do Header*/
+    position: relative;
+    margin: auto;
+    padding: 0;
+    background-color: #FBF6F0;
     color: white;
     font-size: 30px;
     border-style: solid;
-    border-width: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 100%;
   }
   
-  .flexContainer > div {
-    margin: 10px;
+.flexContainer div {
+  max-height: 1173px;
+  max-width: 430px;
+  margin: 10px;
+}
+
+.menuToggle { /* Estilização do menu hamburguer */
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  align-items: center;
+  width: 59px;
+  height: 40px;
+}
+
+.line1, 
+.line2,
+.line3 { /* Estilização das linhas do menu hamburguer*/
+  border-radius: 5px;
+  border-style: solid;
+  width: 100%;
+  margin: 6px 0;
+  color: #4B626C;
+  background-color: #4B626C;
+  transition: all 0.3s ease; /* Adicionando transições para as animações */
 }
 
 .botao{
   align-items: center;
 }
 
-.imagemLogo{
+
+.imagemLogo {
+  max-height: 90px; /* Mantém a proporção da imagem */
+  max-width: 90px; /* Garante que a largura da imagem não ultrapasse o contêiner */
   cursor: pointer;
-  height: 10rem;
+  display: flex;
+}
+
+@media (max-width: 870px) {
+  .exibirOpcao {
+    display: none; /* Esconde os itens de navegação */
+  }
+  
+  .menuToggle {
+    display: flex; /* Libera a visualização do Menu*/
+  }
+
+  /* fullscreen */
+
+  .flexContainer.mobile {
+    flex-direction: column;
+    background-color: #4B626C;
+    justify-content: center;
+  }
+  
+  .menuSection.on {
+    
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .exibirOpcao.hamburguer {
+    display: flex;
+  }
+
+  .imagemLogo.hidden {
+    display: none;
+  }
+
+  .line1.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    transform: rotate(-45deg) translateY(10px);
+  }
+
+  .line2.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    opacity: 0;
+  }
+
+  .line3.changed {
+    color: #ffffff;
+    background-color: #ffffff;
+    transform: rotate(45deg) translateY(-10px);
+
+  }
+
+
 }

@@ -1,19 +1,109 @@
-.secaoCadastro {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.secaoCadastro img {
-    height: auto; 
-    width: auto;  /* Isso permite que a imagem ocupe o espaço disponível */
+/* Por definição, o tamanho da fonte é 16px*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-    background-color: #FBF8F4;
+    width: 100%; /* Garante que o body ocupe toda a largura */
+    height: 100%; /* Garante que o body ocupe toda a altura */
     font-family: 'Montserrat', sans-serif;
+    color: #4B626C;
+    background-color: #FBF8F4;
+}
+
+
+h1 {
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.textoH1 {
+    color: #4B626C;
+}
+
+.containerFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.containerGeral {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+}
+
+.containerLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end; /* Alinha os itens no final do container */
+}
+
+.opcaoCadastrar {
+    text-align: end;
+}
+
+.opcaoEntrar {
+    text-align: start;
+}
+
+.img_container {
+    width: 100%; /* A largura do contêiner será 100% da janela */
+    height: 100vh; /* Altura igual à altura da janela */
+    margin: auto; /* Centraliza o contêiner */
+    position: relative;
+    display: block; 
+}
+
+.img_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    .img_container {
+        height: 60vh; /* Reduz a altura para telas pequenas */
+    }
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 1200px) {
+    .img_container {
+        height: 100vh; /* Aumenta a altura para telas maiores */
+    }
+}
+
+
+@media (max-width: 920px) {
+    .containerGeral {
+        flex-direction: column-reverse;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: 39.01;
+    }
+
+    .img_container {
+        height: auto; /* A altura será ajustada automaticamente em telas pequenas */
+    }
+    
+    .img_container img {
+        width: 100%; /* A largura será 100% do contêiner */
+        height: auto; /* A altura se ajusta automaticamente */
+    }
 }

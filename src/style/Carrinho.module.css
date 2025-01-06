@@ -1,0 +1,12 @@
+.containerGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.containerFlex1{
+    background-color: #4B626C;
+}
+
+.containerFlex2{
+    background-color: #FBF6F0;
+}

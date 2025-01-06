@@ -6,50 +6,47 @@ import styles from "../style/Cadastro.module.css";
 import estiloCampo from "../style/StyleMUI_Campo.jsx";
 import estiloIcone from "../style/StyleMUI_Icone.jsx";
 
-export default function LoginUsuario(){
+const RecuperarConta = () => {
     let navegador = useNavigate();
 
-    const tratarLogin = () => {
+    const recuperarConta = () => {
         window.alert("Nenhum usuário está cadastrado no momento. Crie uma conta.");
     };
 
-    const navegar = (rota) => {
-        navegador(rota);
+    const irLogin = () => {
+        navegador("/TelaLogin");
     }
+
+    const irCadastro = () => {
+        navegador("/");
+    };
 
     return (
         <>
             <section className={styles.containerGeral}>
                 <form className={styles.containerFormulario}>
-                    <h1 className={styles.textoH1}>Login</h1>
+                    <h1 className={styles.textoH1}>Recuperar Conta</h1>
 
                     <div>
                         <TextField required label="Email" name="Email" 
                         variant="outlined" 
                         sx={estiloCampo}/>
-                    </div>
-
-                    <div>
-                        <TextField required type="password" label="Senha" name="Senha" 
-                        variant="outlined"
-                        sx={estiloCampo}/>
-                    </div>              
-                    
+                    </div>        
 
                     {/* Realiza login de usuário*/} 
                     <div className={styles.opcaoCadastrar}>
-                        <IconButton onClick={tratarLogin} sx={estiloIcone} >
+                        <IconButton  onClick={recuperarConta} sx={estiloIcone} >
                             <ArrowForwardIcon/>
                         </IconButton>
                     </div>
 
                     <div className={styles.containerLogin}>
                         <div>
-                            <Button variant="text" onClick={() => navegar("/")}>Criar Conta </Button>
+                            <Button variant="text" onClick={irCadastro}>Criar Conta </Button>
                         </div>
 
                         <div>
-                            <Button variant="text" onClick={() => navegar("/TelaRecuperarConta")}>Esqueceu a Senha? </Button>
+                            <Button variant="text" onClick={irLogin} >Fazer Login? </Button>
                         </div>
                     </div>
                 </form>
@@ -61,3 +58,5 @@ export default function LoginUsuario(){
         </>
     )
 }
+
+export default RecuperarConta;
