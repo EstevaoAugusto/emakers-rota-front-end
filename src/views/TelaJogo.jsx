@@ -12,7 +12,7 @@ export default function TelaJogo(){
                 <main>
                     <div>
                         <div className={styles.containerGrid}>
-                            <img src="src/assets/images/widescreen/GodOfWar2016.png" alt="" srcset="" />
+                            <img src="src/assets/images/widescreen/GodOfWar2016.png" alt="Capa do Videogame God Of War(2016)" />
                             <div className={styles.textoConteudo}>
                                 <h1>God of War</h1>
                                 <p> 

@@ -26,8 +26,9 @@ h1 {
 .containerFormulario {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 1rem;
     justify-content: space-between;
+    width: 50%;
 }
 
 .containerGeral {

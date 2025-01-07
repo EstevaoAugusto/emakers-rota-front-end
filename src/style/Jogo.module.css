@@ -1,7 +1,15 @@
+/* O font-size padrao da pagina é 16px*/
+
 .containerGrid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
     background-color: #4B626C;
+    margin: 30px;
+}
+
+.containerGrid > img {
+    width: 100%;
+    height: auto;
 }
 
 .textoConteudo{
@@ -9,14 +17,39 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    gap: 1rem;
     margin: 50px;
 }
 
-.textoConteudo p {
-    font-size: 20px;
+.textoConteudo > p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.textoConteudo > h1 {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .containerGrid img {
     height: auto;
     width: 100%;
+    max-width: 900px;
+}
+
+/* adaptação para telas menores*/
+@media (max-width: 830px){
+    .containerGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .containerGrid > img {
+        
+    }
+
+    .textoConteudo > p{
+        text-justify: inter-word;
+        text-align: justify;
+        font-size: 1rem;
+    }
 }
