@@ -5,8 +5,20 @@
 
 .containerFlex1{
     background-color: #4B626C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
 }
 
 .containerFlex2{
     background-color: #FBF6F0;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagemPix {
+    width: 60px;
+    height: 60px;
 }
