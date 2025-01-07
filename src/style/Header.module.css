@@ -45,6 +45,7 @@
   border-style: solid;
   width: 100%;
   margin: 6px 0;
+  transform-origin: center;
   color: #4B626C;
   background-color: #4B626C;
   transition: all 0.3s ease; /* Adicionando transições para as animações */
@@ -81,6 +82,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0;
   }
   
   .menuSection.on {
@@ -99,7 +101,6 @@
   .line1.changed {
     color: #ffffff;
     background-color: #ffffff;
-    transform: rotate(-45deg) translateY(10px);
   }
 
   .line2.changed {
@@ -111,8 +112,6 @@
   .line3.changed {
     color: #ffffff;
     background-color: #ffffff;
-    transform: rotate(45deg) translateY(-10px);
-
   }
 
 

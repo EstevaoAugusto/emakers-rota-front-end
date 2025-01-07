@@ -18,9 +18,9 @@ const Header = () => {
 
     useEffect(() => {
         if(menuOpen){
-            document.body.classList.add(styles.scrollCancelled);
+            document.body.style.overflow = "hidden"; // Desabilita o scroll
         } else {
-            document.body.classList.remove(styles.scrollCancelled);
+            document.body.style.overflow = "auto"; // Habilita o scroll
         }
     }, [menuOpen]);
 
