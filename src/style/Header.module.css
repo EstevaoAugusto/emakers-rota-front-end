@@ -1,5 +1,8 @@
 /* Estilização do Header */
 
+.caixaTexto {
+  color: #97A4A273;
+}
 
 .exibirOpcao { /* Serve para ter controle se as opçãos aparecem ou nao*/
   display: flex;
@@ -31,24 +34,11 @@
   display: none;
   cursor: pointer;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin-left: auto;
   align-items: center;
   width: 59px;
   height: 40px;
-}
-
-.line1, 
-.line2,
-.line3 { /* Estilização das linhas do menu hamburguer*/
-  border-radius: 5px;
-  border-style: solid;
-  width: 100%;
-  margin: 6px 0;
-  transform-origin: center;
-  color: #4B626C;
-  background-color: #4B626C;
-  transition: all 0.3s ease; /* Adicionando transições para as animações */
 }
 
 .botao{
@@ -96,22 +86,6 @@
 
   .imagemLogo.hidden {
     display: none;
-  }
-
-  .line1.changed {
-    color: #ffffff;
-    background-color: #ffffff;
-  }
-
-  .line2.changed {
-    color: #ffffff;
-    background-color: #ffffff;
-    opacity: 0;
-  }
-
-  .line3.changed {
-    color: #ffffff;
-    background-color: #ffffff;
   }
 
 
