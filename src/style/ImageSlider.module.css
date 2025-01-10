@@ -1,0 +1,42 @@
+.containerFlex1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between; /* Centraliza o conteúdo */
+}
+
+.containerFlex1 > p {
+    color: black;
+}
+
+
+.containerFlex2 {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que as imagens se ajustem para o próximo "row" se necessário */
+}
+
+.containerFlex3 {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    height: 100%;
+}
+
+.flex_item {
+    flex: 1; /* Ocupa espaço proporcional */
+    text-align: center;
+    height: auto; /* Ajuste automático de altura para manter a proporção */
+    max-width: 100%;
+    object-fit: cover; /* Ajuste de imagem para manter proporção sem distorção */
+}
+
+.flex_item.special {
+    width: 60%; /* Controla o tamanho da imagem central */
+    height: auto; /* Ajusta a altura automaticamente */
+    object-fit: cover; /* Garante que a imagem central não fique distorcida */
+}
