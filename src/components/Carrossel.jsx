@@ -1,48 +1,121 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import IconButton from '@mui/material/IconButton';
+import styles from "../style/Carrossel.module.css";
+import { useNavigate } from "react-router-dom";
+
+
+const CustomLeftArrow = ({ onClick, className }) => {
+  return (
+    <IconButton
+      onClick={onClick}
+      className={className}
+      style={{
+        position: "absolute",
+        left: "-50px", // Altere para a posição desejada
+        zIndex: 0, // Garante que não fique acima do conteúdo
+        padding: "10px",
+      }}
+    >
+      <KeyboardArrowLeftIcon/>
+    </IconButton>
+  );
+};
+
+const CustomRightArrow = ({ onClick, className }) => {
+  return (
+    <IconButton
+      onClick={onClick}
+      className={className}
+      style={{
+        position: "absolute",
+        right: "-50px", // Altere para a posição desejada
+        zIndex: 0,
+        padding: "100px",
+      }}
+    >
+      <KeyboardArrowRightIcon/>
+    </IconButton>
+  );
+};
 
 
 const Carrossel = () => {
-    const imgStyle = {
-        width: "50%",
-        height: "75%",
-    };
+  const navegador = useNavigate();
+
+  const navegar = (rota) => {
+    navegador(rota)
+  }
+
 
     const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
-        },
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 3
+          items: 5,
+          slidesToSlide: 3,
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 2
+          items: 3,
+          slidesToSlide: 2,
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 1
+          items: 1,
+          slidesToSlide: 1,
         }
       };
       
+    const imagensPropriedades = [
+      { 
+        caminho: "src/assets/images/posters/BattleForBikiniBottom.png",
+        descricao: "Jogo Spongebob SquarePants: Battle For Bikini Bottom Rehydrated",
+        key: "1",
+        preco: "R$ 299,00",
+      }, {
+        caminho: "src/assets/images/posters/DeathStranding.png",
+        descricao: "Jogo Death Stranding",
+        key: "2",
+        preco: "R$ 299,00",
+      }, {
+        caminho: "src/assets/images/posters/GodOfWar2016.png",
+        descricao: "Jogo God Of War (2019)",
+        key: "3",
+        preco: "R$ 299,00",
+      }, {
+        caminho: "src/assets/images/posters/Mars.png",
+        descricao: "Jogo Deliver Us Mars",
+        key: "4",
+        preco: "R$ 299,00",
+      }, {
+        caminho: "src/assets/images/posters/Perish.png",
+        descricao: "Jogo Perish",
+        key: "5",
+        preco: "R$ 299,00",
+      }, {
+        caminho: "src/assets/images/posters/SpellForce.png",
+        descricao: "Jogo SpellForce",
+        key: "6",
+        preco: "R$ 299,00",
+      },
+    ]
     return (
         <Carousel responsive={responsive}>
-            <img src="src\assets\images\posters\BattleForBikiniBottom.png" 
-            alt="Jogo Spongebob SquarePants: Battle For Bikini Bottom Rehydrated" srcset="" 
-            style={imgStyle} />
-            <img src="src\assets\images\posters\DeathStranding.png" 
-            alt="Jogo Death Stranding" srcset="" style={imgStyle} />
-            <img src="src\assets\images\posters\GodOfWar2016.png" 
-            alt="Jogo God Of War (2016)" srcset="" style={imgStyle} />
-            <img src="src\assets\images\posters\Mars.png" 
-            alt="Jogo Deliver Us Mars" srcset="" style={imgStyle} />
-            <img src="src\assets\images\posters\Perish.png" 
-            alt="Jogo Perish" srcset="" style={imgStyle} />
-            <img src="src\assets\images\posters\SpellForce.png" 
-            alt="Jogo SpellForce" srcset="" style={imgStyle} />
+        {
+          imagensPropriedades.map((imagem) => {
+            return (
+                <div key={imagem.key} className={styles.flexContainer}>
+                  <img  src={imagem.caminho} alt={imagem.descricao} className={styles.imgStyle} onClick={
+                    imagem.descricao === "Jogo God Of War (2019)" ? () => {navegar("/TelaJogo")} : null
+                    }/>
+                  <div className={styles.priceStyle}>{imagem.preco}</div>
+                </div>
+              );
+            }
+          )
+        }
         </Carousel>
     )
 }

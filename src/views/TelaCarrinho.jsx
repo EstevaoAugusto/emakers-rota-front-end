@@ -2,7 +2,8 @@ import Header from "../components/Header.jsx";
 import styles from "../style/Carrinho.module.css";
 import JogoItemCarrinho from "../components/JogoItemCarrinho.jsx";
 import { useState } from "react";
-import { FormControl, FormControlLabel, FormLabel, RadioGroup, Radio, Button } from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Button } from "@mui/material";
 
 export default function TelaCarrinho() {
     const [pagamento, setPagamento] = useState("PIX");
@@ -41,12 +42,23 @@ export default function TelaCarrinho() {
                                     name="controlled-radio-buttons-group"
                                     value={pagamento}
                                     >
-                                        <img src="src/assets/images/PagamentoPix.png" alt="Icone do PIX, uma forma de pagamento" className={styles.imagemPix}/>
-                                        <FormControlLabel value="PIX" control={<Radio />} label="PIX" />
+                                        <FormControlLabel 
+                                            value="PIX" 
+                                            control={<Radio />} 
+                                            label={
+                                                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                                    <img 
+                                                        src="src/assets/images/PagamentoPix.png" 
+                                                        alt="Icone do PIX, uma forma de pagamento" 
+                                                        className={styles.imagemPix}
+                                                    />
+                                                    PIX
+                                                </div>
+                                            } />
                                     </RadioGroup>
                             </FormControl>
+                            <div className={styles.linhaDivisora2}></div>
                             <FormControl>
-                                    <FormLabel id="demo-controlled-radio-buttons-group">Método de Pagamento</FormLabel>
                                     <RadioGroup
                                     aria-labelledby="demo-controlled-radio-buttons-group"
                                     name="controlled-radio-buttons-group"
@@ -55,7 +67,14 @@ export default function TelaCarrinho() {
                                         <FormControlLabel value="PIX" control={<Radio />} label="Eu aceito os termos e condições" />
                                     </RadioGroup>
                             </FormControl>
-                            <Button variant="text" >Finalizar Compra</Button>
+                            <Button variant="text" sx={
+                                {
+                                    backgroundColor: '#4B626C',
+                                    color: '#FBF6F0',
+                                    width: '190px',
+                                }
+                            }
+                            endIcon={<ShoppingCartIcon/>}>Finalizar Compra</Button>
 
                         </div>
                     </div>

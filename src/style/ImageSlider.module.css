@@ -1,10 +1,12 @@
 .containerFlex1 {
     display: flex;
     flex-direction: row;
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
     align-items: center;
-    justify-content: space-between; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza o conteúdo */
 }
 
 .containerFlex1 > p {
@@ -14,16 +16,17 @@
 
 .containerFlex2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%; 
+    align-items: end;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que as imagens se ajustem para o próximo "row" se necessário */
 }
+
 
 .containerFlex3 {
     display: flex;
     flex-direction: row;
-    width: 100%; 
+    width: 75%; 
     height: 100%;
 }
 
@@ -31,12 +34,24 @@
     flex: 1; /* Ocupa espaço proporcional */
     text-align: center;
     height: auto; /* Ajuste automático de altura para manter a proporção */
-    max-width: 100%;
+    width: 30%;
+    margin: 0 auto;
     object-fit: cover; /* Ajuste de imagem para manter proporção sem distorção */
 }
 
 .flex_item.special {
-    width: 60%; /* Controla o tamanho da imagem central */
+    width: 50%; /* A imagem principal ocupa mais espaço */
+    margin: 0 auto;
     height: auto; /* Ajusta a altura automaticamente */
     object-fit: cover; /* Garante que a imagem central não fique distorcida */
+}
+
+@media screen and (max-width: 710px) {
+    .containerFlex2{
+        display: none;
+    }
+
+    .containerFlex1{
+
+    }
 }
