@@ -1,7 +1,28 @@
-.conteudo {
-    padding: 0;
-    margin: 0;
+.secao {
+}
+
+
+.conteudo1 {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background-color: #FBF6F0;
+}
+
+.conteudo2 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: auto;
     background-color: #4B626C;
     position: relative;
     color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.tituloH1 {
+    font-size: 32px;
+    padding: 10px;
 }
