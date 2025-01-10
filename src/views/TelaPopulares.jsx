@@ -15,7 +15,7 @@ const TelaPopulares = () => {
     return(
         <>
             <Header/>
-            <section>
+            <section className={styles.secao}>
                 <h1 className={styles.tituloH1}>Populares</h1>
                 <div className={styles.container_flex_jogos_widescreen}>
                     <JogoItem imagem="src/assets/images/widescreen/GodOfWar2016.png" titulo = "God Of War"
