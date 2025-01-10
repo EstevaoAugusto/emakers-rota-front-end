@@ -1,0 +1,48 @@
+.styleContainerFlexJogoItem { /* Container do jogo item*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+
+.fontTamanho  {
+    font-size: 32px;
+}
+
+.linhaDivisora  {
+    display: flex;
+    flex-direction: row;
+    background-color: #FBF6F0;
+    border: 0.2rem solid #FBF6F0;
+    width: 100%;
+    max-width: 80%;
+    border-radius: 1rem;
+}
+
+.styleContainerGrid  { /* Grid; onde uma coluna é texto; e a outra é uma imagem do jogo.*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.styleContainerGridPrecoTotal  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.styleImagem  {
+    height: 250px;
+    width: 190px;
+}
+
+.styleContainerFlex  { /* Container Flex para o texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+   
+}
