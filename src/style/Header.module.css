@@ -1,5 +1,23 @@
 /* Estilização do Header */
 
+header {
+  position: relative;
+  z-index: 2;
+  outline: none;
+  border: none; /* Remove bordas */
+  box-shadow: none; /* Remove sombras */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #666666;
+  z-index: 1; /* Certifique-se de que esteja acima de tudo */
+}
+
 .caixaTexto {
   color: #97A4A273;
 }
@@ -69,10 +87,12 @@
   .flexContainer.mobile {
     flex-direction: column;
     background-color: #4B626C;
+    border-color: #4B626C;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 0;
+    padding: 3rem;
   }
   
   .menuSection.on {

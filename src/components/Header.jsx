@@ -7,6 +7,46 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import IconButtonComponent from "./IconButtonComponent";
 
+const estiloCampo1 = {
+    width: '100%',
+    height: '50x',
+    backgroundColor: '#EFEFEF', // Fundo azul-cinza
+    borderRadius: '5px', // Borda arredondada
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            boxShadow: '0 4 20px 2px rgba(0, 0, 0, 0.25)',
+            borderColor: 'transparent',
+        },
+        '&:hover fieldset': {
+            borderColor: '#1e90ff', // Cor da borda ao passar o mouse
+        },
+        '&.Mui-focused fieldset': {
+            boxShadow: '0 0 10px 2px rgba(30, 144, 255, 0.7)', // Borda azul borrada
+            borderColor: '#1e90ff', // Cor da borda ao focar
+        },
+    }
+};
+
+const estiloCampo2 = {
+    width: '100%',
+    height: '50x',
+    backgroundColor: '#97A4A2', // Fundo azul-cinza
+    borderRadius: '5px', // Borda arredondada
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            boxShadow: '0 4 20px 2px rgba(0, 0, 0, 0.25)',
+            borderColor: 'transparent',
+        },
+        '&:hover fieldset': {
+            borderColor: '#1e90ff', // Cor da borda ao passar o mouse
+        },
+        '&.Mui-focused fieldset': {
+            boxShadow: '0 0 10px 2px rgba(30, 144, 255, 0.7)', // Borda azul borrada
+            borderColor: '#1e90ff', // Cor da borda ao focar
+        },
+    }
+}
+
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false); // estado do menu
                                                      // varia de aberto(TRUE) e fechado (FALSE)
@@ -29,7 +69,8 @@ const Header = () => {
         }
     }, [menuOpen]);
 
-    return (   
+    return (
+        <>
         <header>
             <nav className={`${styles.flexContainer} ${ menuOpen ? styles.mobile : ""}`}> {/* Quando menuOpen é verdadeiro, certas estilizações sao ativadas para garantir a responsividade*/}
                 <img className={`${styles.imagemLogo} ${menuOpen ? styles.hidden: ""}`} src="src\assets\images\Logo.png" onClick={() => navegar("/TelaPrincipal")}></img>
@@ -39,27 +80,33 @@ const Header = () => {
                 Na realidade, apenas alguns te levaram a uma pagina. */}
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>
-                        <Button className={styles.botao} variant="text" >Lançamentos</Button>
+                        <Button className={styles.botao} variant="text" sx={{ color: !menuOpen ? '#4B626C' : '#FFFFFF'}} >Lançamentos</Button>
                     </div>
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>
-                        <Button className={styles.botao} variant="text" onClick={() => navegar("/TelaPopulares")}>Populares</Button>
+                        <Button className={styles.botao} variant="text" sx={{ color: !menuOpen ? '#4B626C' : '#FFFFFF'}}
+                        onClick={() => navegar("/TelaPopulares")}>Populares</Button>
                     </div>
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>
-                        <Button className={styles.botao} variant="text" >Gêneros</Button>
+                        <Button className={styles.botao} variant="text" 
+                        sx={{ color: !menuOpen ? '#4B626C' : '#FFFFFF'}}>Gêneros</Button>
                     </div>
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>    
-                        <Button className={styles.botao} variant="text">Promoçoes</Button>
+                        <Button className={styles.botao} variant="text" 
+                        sx={{ color: !menuOpen ? '#4B626C' : '#FFFFFF'}}>Promoçoes</Button>
                     </div>
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>
-                        <Button className={styles.botao} variant="text" onClick={() => navegar("/TelaConta")}>Conta</Button>
+                        <Button className={styles.botao} variant="text" sx={{ color: !menuOpen ? '#4B626C' : '#FFFFFF'}} 
+                        onClick={() => navegar("/TelaConta")}>Conta</Button>
                     </div>
 
                     <div className={`${styles.exibirOpcao} ${ menuOpen ? styles.hamburguer : ""}`}>
                         <TextField className={styles.caixaTexto} id="outlined-basic" label="" variant="outlined"
+                        sx={menuOpen ? estiloCampo2 : estiloCampo1}
+
                         slotProps={{
                             input: {
                                 endAdornment:
@@ -88,6 +135,12 @@ const Header = () => {
                 </div>
             </nav>
         </header>
+        {/* Overlay para escurecer o fundo */}
+        {menuOpen && (
+                <div className={styles.overlay} />
+            )
+        }
+        </>
     )
 }
 
