@@ -71,7 +71,7 @@ export default function TelaConta() {
                                         width: '170px',
                                     }
                                 }
-                                onClick={handleAlterarDados} endIcon={<CreateIcon/>}>
+                                onClick={() => navegar("/TelaAdministrador")} endIcon={<CreateIcon/>}>
                                     Alterar Dados
                             </Button>
 
@@ -120,7 +120,7 @@ export default function TelaConta() {
                         
                     
                         <div >
-                            <IconButton sx={estiloIconeCarrinho} onClick={() => navegar("/TelaCarrinho")}>
+                            <IconButton sx={estiloIconeCarrinho} onClick={() => {navegar("/TelaCarrinho")}} aria-label="Abrir carrinho de compras">
                                 <AddShoppingCartOutlinedIcon/>
                             </IconButton>
                         </div>

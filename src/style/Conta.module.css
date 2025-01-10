@@ -28,7 +28,6 @@
 .grid_container {
     display: grid;
     grid-template-columns: auto auto;
-    background-color: #ffffff;
     padding: 0;
     margin: 0;
     height: 100vh;
@@ -36,9 +35,11 @@
 }
 
 .txt_item {
-    padding: 1rem;
+    padding: 4rem;
     margin: 1rem;
     color: #4B626C;
+    background-color: #FBF6F0;
+    border-color: #FBF6F0;
 }
 
 .jogos_adicionados {
@@ -71,6 +72,9 @@
 }
 
 @media screen and (max-width: 980px) {
+    .txt_item {
+        padding: 2rem;
+    }
 
     .conjuntoBotoes {
         justify-content: center;
