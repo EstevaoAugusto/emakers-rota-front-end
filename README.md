@@ -52,4 +52,6 @@ gh repo clone EstevaoAugusto/emakers-rota-front-end
 - src/views: Conjunto de paginas do website
 - src/assets/images: Imagens utilizadas no website. 
 
-# Funcionalidades
+# Funcionalidade
+
+Website de uma loja de games
