@@ -120,7 +120,7 @@ const Header = () => {
                 
                 {/* Menu hambúrguer */}
                 
-                <div className={`${styles.menuSection} ${ menuOpen ? styles.on : ""}`}>
+                <div className={`${styles.menuSection} ${ !menuOpen ? styles.on : ""}`}>
                     <div className={styles.menuToggle} onClick={trocarMenu}>
                         { !menuOpen ? //Caso o menu nao tenha sido aberto, deixar o icone hamburgue
                             <IconButtonComponent Icone={<MenuIcon/>}

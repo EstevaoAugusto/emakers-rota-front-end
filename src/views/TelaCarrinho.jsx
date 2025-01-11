@@ -6,10 +6,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Button } from "@mui/material";
 
 export default function TelaCarrinho() {
-    const [pagamento, setPagamento] = useState("PIX");
+    const [pagamento, setPagamento] = useState(false);
+    const [termosAceito, setTermosAceito] = useState(false);
 
     const handleChange = (event) => {
         setPagamento(event.target.value);
+    };
+
+    const handleTermosChange = (event) => {
+        setTermosAceito(event.target.value === "TERMS"); // Marca os termos como aceitos
     };
 
     const estiloH1_1 = {
@@ -54,7 +59,8 @@ export default function TelaCarrinho() {
                                                     />
                                                     PIX
                                                 </div>
-                                            } />
+                                            } 
+                                            onChange={handleChange} />
                                     </RadioGroup>
                             </FormControl>
                             <div className={styles.linhaDivisora2}></div>
@@ -62,9 +68,10 @@ export default function TelaCarrinho() {
                                     <RadioGroup
                                     aria-labelledby="demo-controlled-radio-buttons-group"
                                     name="controlled-radio-buttons-group"
-                                    value={pagamento}
+                                    value={termosAceito ? "TERMS" : ""}
+                                    onChange={handleTermosChange }
                                     >
-                                        <FormControlLabel value="PIX" control={<Radio />} label="Eu aceito os termos e condições" />
+                                        <FormControlLabel value="TERMS" control={<Radio />} label="Eu aceito os termos e condições" />
                                     </RadioGroup>
                             </FormControl>
                             <Button variant="text" sx={
@@ -74,7 +81,7 @@ export default function TelaCarrinho() {
                                     width: '190px',
                                 }
                             }
-                            endIcon={<ShoppingCartIcon/>}>Finalizar Compra</Button>
+                            endIcon={<ShoppingCartIcon/>} >Finalizar Compra</Button>
 
                         </div>
                     </div>
