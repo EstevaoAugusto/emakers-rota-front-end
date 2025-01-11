@@ -18,7 +18,7 @@ html, body {
 .estiloFooter {
     background-color: #97A4A2;
     width: 100%; 
-    height: 100vh;
+    height: auto;
     position: relative;
     box-sizing: border-box;
     margin-top: auto;

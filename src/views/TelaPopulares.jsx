@@ -25,14 +25,14 @@ const TelaPopulares = () => {
                                 deuses do Olimpo no passado, Kratos agora vive no reino das divindades e monstros nórdicos.
                                 É nesse mundo duro e impiedoso que ele deve lutar para sobreviver enquanto ensina seu
                                 filho a fazer o mesmo e tenta impedi-lo de repetir os erros cruéis do Fantasma de Esparta."
-                        lado="esquerda"
+                        lado="esquerda" posicao="1°"
                     />
                     <JogoItem imagem="src/assets/images/widescreen/HorizonZeroDawn.png" titulo="Horizon Zero Dawn"
                         descricao="Em um futuro distante, dominado por máquinas colossais que vagam pela Terra, a natureza retomou 
                                 as ruínas da nossa civilização esquecida e pequenos grupos de sobreviventes se dividem em diferentes tribos. 
                                 Empunhe o arco e a lança de Aloy, uma jovem caçadora de máquinas exilada da sua tribo, que parte em busca 
                                 da verdade sobre suas origens e o misterioso mundo que ela precisa salvar."
-                        lado={estadoMobile ? "esquerda" : "direita"}
+                        lado={estadoMobile ? "esquerda" : "direita"} posicao="2°"
                     />
 
                     <JogoItem imagem="src/assets/images/widescreen/DaysGone.png" titulo="Days Gone"
@@ -41,7 +41,7 @@ const TelaPopulares = () => {
                                 um caçador de recompensas que tenta achar uma razão para viver numa terra cercada pela morte. 
                                 Vasculhe assentamentos abandonados em busca de equipamentos para produzir itens e armas valiosos ou 
                                 arrisque-se com outros sobreviventes que tentam ganhar a vida honestamente... ou de formas mais violentas."
-                        lado="esquerda"
+                        lado="esquerda" posicao="3°"
                     />
                 </div>
             </section>

@@ -4,8 +4,7 @@ header {
   position: relative;
   z-index: 2;
   outline: none;
-  border: none; /* Remove bordas */
-  box-shadow: none; /* Remove sombras */
+  box-shadow: 0 10px 10px #00000040;
 }
 
 .overlay {
@@ -28,6 +27,7 @@ header {
 
 .flexContainer { /* Configurações do Flex Container principal do Header*/
     position: relative;
+    border-color: #FBF6F0;
     margin: auto;
     padding: 0;
     background-color: #FBF6F0;

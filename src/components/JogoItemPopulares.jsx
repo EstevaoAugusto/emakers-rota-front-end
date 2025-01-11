@@ -2,15 +2,18 @@
 
 import styles from "../style/Populares.module.css";
 
-const JogoItem = ({imagem = "", titulo = "Indeterminado", descricao = "", lado}) => {
+const JogoItem = ({ posicao, imagem = "", titulo = "Indeterminado", descricao = "", lado, estilo}) => {
 
     return(
         <div className={`${styles.item}`}>
             { lado === "esquerda" ? (
                 <>
-                    <img src={imagem} alt={`Jogo ${titulo}`}/>
+                    <div className={styles.position_relative}>
+                        <div className={styles.posicaoPopularidade1}>{posicao}</div>
+                        <img src={imagem} alt={`Jogo ${titulo}`}/>
+                    </div>
                     <div className={styles.texto}>
-                        <h2 className={styles.tituloH1}>{titulo}</h2>
+                        <h2 >{titulo}</h2>
                         <p className={styles.fraseP}>
                             {descricao}
                         </p>
@@ -19,12 +22,15 @@ const JogoItem = ({imagem = "", titulo = "Indeterminado", descricao = "", lado})
                 ) : (
                 <>
                     <div className={styles.texto}>
-                        <h2 className={styles.tituloH1}>{titulo}</h2>
+                        <h2 >{titulo}</h2>
                         <p className={styles.fraseP}>
                             {descricao}
                         </p>
                     </div>
+                    <div className={styles.position_relative}>
+                        <div className={styles.posicaoPopularidade1}>{posicao}</div>
                         <img src={imagem} alt={`Jogo ${titulo}`}/>
+                    </div>
                 </>
                 )
             }
