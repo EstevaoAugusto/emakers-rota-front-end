@@ -1,45 +1,7 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import IconButton from '@mui/material/IconButton';
 import styles from "../style/Carrossel.module.css";
 import { useNavigate } from "react-router-dom";
-
-
-const CustomLeftArrow = ({ onClick, className }) => {
-  return (
-    <IconButton
-      onClick={onClick}
-      className={className}
-      style={{
-        position: "absolute",
-        left: "-50px", // Altere para a posição desejada
-        zIndex: 0, // Garante que não fique acima do conteúdo
-        padding: "10px",
-      }}
-    >
-      <KeyboardArrowLeftIcon/>
-    </IconButton>
-  );
-};
-
-const CustomRightArrow = ({ onClick, className }) => {
-  return (
-    <IconButton
-      onClick={onClick}
-      className={className}
-      style={{
-        position: "absolute",
-        right: "-50px", // Altere para a posição desejada
-        zIndex: 0,
-        padding: "100px",
-      }}
-    >
-      <KeyboardArrowRightIcon/>
-    </IconButton>
-  );
-};
 
 
 const Carrossel = () => {
