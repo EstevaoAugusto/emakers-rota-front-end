@@ -5,6 +5,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const ImageSlider = () => {
+
   const [ pagina, setpagina ] = useState(0);
 
 
@@ -24,21 +25,18 @@ const ImageSlider = () => {
       descricao: "Jogo God Of War (2019)",
       key: "1",
       preco: "R$ 299,00",
-      onClick: null,
     },
     {
       caminho: "src/assets/images/widescreen/DaysGone.png",
       descricao: "Jogo Days Gone",
       key: "2",
       preco: "R$ 299,00",
-      onClick: null,
     },
     {
       caminho: "src/assets/images/widescreen/HorizonZeroDawn.png",
       descricao: "Jogo Horizon Zero Dawn",
       key: "3",
       preco: "R$ 299,00",
-      onClick: null,
     },
   ]
 
@@ -50,17 +48,23 @@ const ImageSlider = () => {
         </IconButton>
           
           <div className={styles.containerFlex2}>
+            
             <img className={styles.flex_item} 
                   src={imagensPropriedades[(pagina + 2) % imagensPropriedades.length].caminho} 
-                  alt={imagensPropriedades[(pagina + 2) % imagensPropriedades.length].descricao} />
+                  alt={imagensPropriedades[(pagina + 2) % imagensPropriedades.length].descricao} 
+                  
+                  />
             <img className={styles.flex_item} 
                   src={imagensPropriedades[(pagina + 1) % imagensPropriedades.length].caminho} 
-                  alt={imagensPropriedades[(pagina + 1) % imagensPropriedades.length].descricao} />
+                  alt={imagensPropriedades[(pagina + 1) % imagensPropriedades.length].descricao} 
+                  />
+                  
           </div>
           <div className={styles.containerFlex3}>
             <img className={`${styles.flex_item} special`} 
                   src={imagensPropriedades[pagina].caminho} 
-                  alt={imagensPropriedades[pagina].descricao} />
+                  alt={imagensPropriedades[pagina].descricao} 
+                  />
           </div>
         <IconButton onClick={proximaPagina}>
           <ChevronRightIcon/>

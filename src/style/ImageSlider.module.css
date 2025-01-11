@@ -17,9 +17,13 @@
 .containerFlex2 {
     display: flex;
     flex-direction: column;
-    width: 100%; 
-    align-items: end;
+    width: 129%; 
+    align-items: center;
     justify-content: center;
+}
+
+.containerFlex2 > div {
+    
 }
 
 

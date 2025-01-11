@@ -26,6 +26,8 @@
     gap: 3rem;
 }
 
+
+
 .styleContainerGridPrecoTotal  {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -39,10 +41,13 @@
 
 .styleContainerFlex  { /* Container Flex para o texto */
     display: flex;
+    padding-left: 3rem;
     flex-direction: column;
     justify-content: space-between;
 }
 
-@media screen and (max-width: 800px) {
-   
+@media screen and (max-width: 600px) {
+    .styleContainerFlex {
+        padding-left: 0;
+    }
 }

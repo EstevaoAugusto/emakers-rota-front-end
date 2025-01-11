@@ -63,16 +63,17 @@ const Carrossel = () => {
         preco: "R$ 299,00",
       },
     ]
+
     return (
         <Carousel responsive={responsive}>
         {
           imagensPropriedades.map((imagem) => {
             return (
-                <div key={imagem.key} className={styles.flexContainer}>
+                <div key={imagem.key} className={styles.imageWrapper}>
                   <img  src={imagem.caminho} alt={imagem.descricao} className={styles.imgStyle} onClick={
                     imagem.descricao === "Jogo God Of War (2019)" ? () => {navegar("/TelaJogo")} : null
                     }/>
-                  <div className={styles.priceStyle}>{imagem.preco}</div>
+                  <div style={styles.precoStyle}>{imagem.preco}</div>
                 </div>
               );
             }
