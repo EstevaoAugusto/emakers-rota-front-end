@@ -1,0 +1,61 @@
+.containerFlex1 {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+}
+
+.containerFlex1 > p {
+    color: black;
+}
+
+
+.containerFlex2 {
+    display: flex;
+    flex-direction: column;
+    width: 129%; 
+    align-items: center;
+    justify-content: center;
+}
+
+.containerFlex2 > div {
+    
+}
+
+
+.containerFlex3 {
+    display: flex;
+    flex-direction: row;
+    width: 75%; 
+    height: 100%;
+}
+
+.flex_item {
+    flex: 1; /* Ocupa espaço proporcional */
+    text-align: center;
+    height: auto; /* Ajuste automático de altura para manter a proporção */
+    width: 30%;
+    margin: 0 auto;
+    object-fit: cover; /* Ajuste de imagem para manter proporção sem distorção */
+}
+
+.flex_item.special {
+    width: 50%; /* A imagem principal ocupa mais espaço */
+    margin: 0 auto;
+    height: auto; /* Ajusta a altura automaticamente */
+    object-fit: cover; /* Garante que a imagem central não fique distorcida */
+}
+
+@media screen and (max-width: 710px) {
+    .containerFlex2{
+        display: none;
+    }
+
+    .containerFlex1{
+
+    }
+}

@@ -1,8 +1,11 @@
 /* Por definição, o tamanho da fonte é 16px*/
+/* Box Sizing é uma propriedade que permite a gente 
+considerar o padding e margin na hora de calcular a 
+largura e altura de um objeto.*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* */
 }
 
 body{
@@ -26,8 +29,9 @@ h1 {
 .containerFormulario {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 1rem;
     justify-content: space-between;
+    width: 50%;
 }
 
 .containerGeral {
@@ -55,6 +59,7 @@ h1 {
 
 .opcaoEntrar {
     text-align: start;
+    padding: 1rem;
 }
 
 .img_container {
@@ -62,33 +67,31 @@ h1 {
     height: 100vh; /* Altura igual à altura da janela */
     margin: auto; /* Centraliza o contêiner */
     position: relative;
-    display: block; 
+    display: flex; 
+    align-items: stretch;
 }
 
 .img_container img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: block;
     margin: auto;
 }
 
-/* Ajuste para telas pequenas */
-@media (max-width: 600px) {
+@media screen and (min-height: 520px) and (max-width: 920px){ /* adaptação de tela baseado na altura */
     .img_container {
-        height: 60vh; /* Reduz a altura para telas pequenas */
+        align-items: flex-start;
+        height: 40vh;
+        width: 60vw;
+    }
+
+    .img_container img {
+        max-height: 80%;
     }
 }
 
-/* Ajuste para telas maiores */
-@media (min-width: 1200px) {
-    .img_container {
-        height: 100vh; /* Aumenta a altura para telas maiores */
-    }
-}
 
-
-@media (max-width: 920px) {
+@media screen and (max-width: 920px) { /* adaptação de tela baseado na largura */
     .containerGeral {
         flex-direction: column-reverse;
     }
@@ -105,5 +108,9 @@ h1 {
     .img_container img {
         width: 100%; /* A largura será 100% do contêiner */
         height: auto; /* A altura se ajusta automaticamente */
+    }
+
+    .containerFormulario {
+        width: 85%;
     }
 }

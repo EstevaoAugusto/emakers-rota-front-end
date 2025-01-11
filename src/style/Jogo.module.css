@@ -1,22 +1,125 @@
+/* O font-size padrao da pagina é 16px*/
+
 .containerGrid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
     background-color: #4B626C;
+    margin: 30px;
+}
+
+.containerGrid img {
+    height: auto;
+    width: 100%;
+    max-width: 900px;
+    object-fit: cover; /* Garante proporção correta */
 }
 
 .textoConteudo{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    text-justify: inter-word;
+    text-align: justify;
+    align-items: center;
+    gap: 1rem;
     margin: 50px;
 }
 
-.textoConteudo p {
-    font-size: 20px;
+.positionRelative {
+    position: relative;
+    display: inline-block;
 }
 
-.containerGrid img {
+.precoDescontoTotal {
+    border: 3px solid #4B626C;
+    background-color: #4B626C;
+    border-radius: 100%;
+    padding: 1rem;
+    width: auto;
     height: auto;
-    width: 100%;
+    color: #FBF6F0;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+}
+
+.precoDesconto {
+    border: 3px solid #4B626C;
+    background-color: #4B626C;
+    border-radius: 5%;
+    padding: 0.3rem;
+    width: auto;
+    height: auto;
+    color: #FBF6F0;
+    position: absolute;
+    bottom: 18px;
+    right: 130px;
+}
+
+.precoAtual {
+    color: #4B626C;
+    background-color: #FCFAFA;
+    border-radius: 5%;
+    padding: 0.5rem;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 18px;
+    right: 30px;
+}
+
+.textoConteudo > p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.textoConteudo > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* adaptação para telas menores*/
+@media screen and (max-width: 860px){
+    .containerGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .containerGrid img {
+        max-width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+        object-fit: contain; /* Adapta imagens */
+    }
+
+    .precoDesconto {
+        bottom: 18px;
+        right: 240px;
+    }
+
+    .precoAtual {
+        bottom: 18px;
+        right: 140px;
+    }
+
+    .textoConteudo > h1 {
+        font-size: 1.5rem;
+    }
+
+    .textoConteudo > p{
+        text-justify: inter-word;
+        text-align: justify;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 861px) and (max-width:1200px) {
+    .textoConteudo {
+        margin: 0;
+    }
+
+    
+
+    .textoConteudo > p {
+        width: 85%;
+        font-size: 95%;
+    }
 }

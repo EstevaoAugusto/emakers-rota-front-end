@@ -2,16 +2,41 @@ import Header from "../components/Header.jsx";
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import estiloIconeCarrinho from "../style/StyleMUI_IconeCarrinho.jsx";
 import { Button, Stack, IconButton } from "@mui/material";
+import CreateIcon from '@mui/icons-material/Create';
+import DeleteIcon from '@mui/icons-material/Delete';
 import styles from "../style/Conta.module.css";
 import { useNavigate } from "react-router-dom";
 
-const postersGames = "../src/assets/images/postersGames";
+const locaisGamesPosters = [
+    {   
+        caminho: "src/assets/images/posters/BattleForBikiniBottom.png", 
+        key: "Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated",
+        nota: "100/100",
+    },
+    { 
+        caminho: "src/assets/images/posters/Mars.png", 
+        key: "Jogo Deliver Us Mars" ,
+        nota: "95/100",
+    },
+    { 
+        caminho: "src/assets/images/posters/GodOfWar2016.png", 
+        key: "Jogo God Of War (2018)" ,
+        nota: "75/100",
+    },
+    { 
+        caminho: "src/assets/images/posters/DeathStranding.png", 
+        key: "Jogo Death Strading",
+        nota: "Adicionar Avaliação",
+    },
+];
+
+
 
 export default function TelaConta() {
     let navegador = useNavigate(); // trata da navegação
 
-    const sairConta = () => {
-        navegador("/")
+    const navegar = (rota) => {
+        navegador(rota)
     }
 
     const handleAlterarDados = () => {
@@ -29,48 +54,73 @@ export default function TelaConta() {
                     <div className={styles.txt_item}>
                     {/* Seção que conta as informações do usuário */}
                     
-                    <h1 className={styles.textoH1}>Olá, Nome do Usuário</h1><br/>
-                    <h2 className={styles.textoH2}>Seu email é nomeusuario@email.com</h2><br/>
-                    <h2 className={styles.textoH2}>Seu CPF é 123.456.789-00</h2><br/><br/>
-                    
-                    
+                    <div className={styles.conjuntoTextos}>
+                        <h1 className={styles.textoH1}>Olá, &lt;&lt;Nome do Usuário&gt;&gt;</h1><br/>
+                        <h2 className={styles.textoH2}>Seu email é nomeusuario@email.com</h2><br/>
+                        <h2 className={styles.textoH2}>Seu CPF é 123.456.789-00</h2><br/><br/>
+                    </div>
+
+                    <div className={styles.conjuntoBotoes}>
                     {/* Pilha de botoes da conta*/}
-                    <Stack 
-                        spacing={2}
-                        direction={"column"}
-                        alignItems={"flex-start"}
-                        margin={"2rem"}
-                    >
-                    <Button  variant="contained" onClick={handleAlterarDados}>Alterar Dados</Button>
-                    <Button  variant="contained" onClick={handleExcluirDados}>Excluir Conta</Button>
-                    <Button  disabled onClick={sairConta}>Tela do Admin</Button>
-                    <Button  variant="contained" onClick={sairConta}>Sair da Conta</Button>
-                </Stack>
+                        <Stack spacing={2} direction={"column"} alignItems={"flex-start"} margin={"2rem"} width={"auto"} >
+                            <Button variant="contained" 
+                                sx={
+                                    { 
+                                        color:'#FBF6F0', 
+                                        backgroundColor: '#4B626C',
+                                        width: '170px',
+                                    }
+                                }
+                                onClick={() => navegar("/TelaAdministrador")} endIcon={<CreateIcon/>}>
+                                    Alterar Dados
+                            </Button>
+
+                            <Button variant="contained" 
+                                sx={
+                                    { 
+                                        color:'#FBF6F0', 
+                                        backgroundColor: '#4B626C',
+                                        width: '170px',
+                                    }
+                                } 
+                                onClick={handleExcluirDados} endIcon={<DeleteIcon/>}>
+                                    Excluir Conta
+                            </Button>
+
+                            <Button variant="contained" sx={
+                                { 
+                                    color:'#FBF6F0', 
+                                    backgroundColor: '#4B626C', 
+                                    opacity: '50%',
+                                    width: '170px',
+                                }
+                            } 
+                            onClick={() => navegar("/")}>
+                                Tela do Admin
+                            </Button>
+                        </Stack>
+                    </div>
+                    
                 </div>
 
                 <div className={styles.jogos_adicionados}>
-                    <h2 className={styles.textoH2}>Jogos adquiridos:</h2>
+                    <h3 className={styles.textoH3}>Jogos adquiridos:</h3>
                     <div className={styles.grid_container_jogos}>
-                        <div>
-                            <img src="src\assets\images\posters\BattleForBikiniBottom.png" alt="Jogo Spongebob Squarepants: Battle For Bikini Bottom Rehydrated"></img>
-                            <p>100/100</p>
-                        </div>
-                        <div>
-                            <img src="src\assets\images\posters\Mars.png" alt="Jogo Deliver Us Mars" />
-                            <p>95/100</p>
-                        </div>
-                        <div>
-                            <img src="src\assets\images\posters\GodOfWar2016.png" alt="Jogo God Of War (2016)" />
-                            <p>75/100</p>
-                        </div>
-                        <div>
-                            <img src="src\assets\images\posters\DeathStranding.png" alt="Jogo Death Strading"></img>
-                            <p>Adicionar Avaliação</p>
-                        </div>
-                        {/* Cadastra um novo usuário.*/}
+                        { //Codigo que coloca os jogos do usuario
+                            locaisGamesPosters.map((local) => {
+                                    return(
+                                        <div key={local.key}> 
+                                            <img src={local.caminho} alt={local.key}></img>
+                                            <p>{local.nota}</p>
+                                        </div>
+                                    )
+                                }
+                            )
+                        }
+                        
                     
                         <div >
-                            <IconButton sx={estiloIconeCarrinho}>
+                            <IconButton sx={estiloIconeCarrinho} onClick={() => {navegar("/TelaCarrinho")}} aria-label="Abrir carrinho de compras">
                                 <AddShoppingCartOutlinedIcon/>
                             </IconButton>
                         </div>

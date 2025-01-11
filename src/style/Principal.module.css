@@ -1,7 +1,34 @@
-.conteudo {
-    padding: 0;
-    margin: 0;
+.secao {
+    width: 100%;
+    height: auto;
+}
+
+.conteudo1 {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    background-color: #FBF6F0;
+}
+
+.conteudo1 > p {
+    color: black;
+}
+
+.conteudo2 {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: auto;
     background-color: #4B626C;
     position: relative;
     color: white;
+    height: auto;
+    width: 100%;
+}
+
+.tituloH1 {
+    font-size: 32px;
+    padding: 10px;
 }

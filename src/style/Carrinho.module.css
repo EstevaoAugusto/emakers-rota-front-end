@@ -1,12 +1,52 @@
 .containerGrid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+    height: 100vh; 
+    gap: 1rem;
 }
 
 .containerFlex1{
     background-color: #4B626C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
 }
 
 .containerFlex2{
     background-color: #FBF6F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.imagemPix {
+    width: 60px;
+    height: 60px;
+}
+
+.linhaDivisora2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #4B626C;
+    border: 0.2rem solid #4B626C;
+    width: 100%;
+    max-width: 80%;
+    border-radius: 1rem;
+}
+
+@media (max-width: 820px) {
+    .containerGrid{
+        grid-template-columns: 3fr;
+    }
+
+    .containerFlex1{
+
+    }
 }

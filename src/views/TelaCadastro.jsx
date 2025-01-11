@@ -19,13 +19,14 @@ const Cadastro = () => {
             SenhaConfirmacao: "",
         }
     );
+    const [houveErro, setHouveErro] = useState(false); //Controla o estado de haver ou nao erro
     const [erros, setErros] = useState(
         {
-            erroNome: "",
-            erroCPF: "",
-            erroEmail: "",
-            erroSenha: "",
-            erroSenhaConfirmacao: "",
+            erroNome: "", //Checa se ha algum erro no nome
+            erroCPF: "", //Checa se ha algum erro no CPF
+            erroEmail: "", //Checa se ha algum erro no email
+            erroSenha: "", //Checa se ha algum erro no senha
+            erroSenhaConfirmacao: "", //Checa se ha algum erro na senha de confirmação
         }
     );
     const [valorHTML, setValorHTML] = useState(     
@@ -40,7 +41,12 @@ const Cadastro = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setValorHTML({ ...valorHTML, [name]: value });
+
+        if(name !== "CPF"){
+            setValorHTML({ ...valorHTML, [name]: value });
+        } else {
+            setValorHTML({ ...valorHTML, [name]: value.toString().replace(/\D/g, '') });
+        }
     };
 
     let navegador = useNavigate(); // trata da navegação
@@ -51,37 +57,55 @@ const Cadastro = () => {
     };        
 
     const handleRegistrar = () => {
-        const novosErros = { Nome: "", CPF: "", Email: "", Senha: "", SenhaConfirmacao: "",};
-
-        if (!valorHTML.Nome || !valorHTML.CPF || !valorHTML.Email || !valorHTML.Senha || !valorHTML.SenhaConfirmacao) {
-            window.alert("Uma das caixas de texto não foi preenchida");
-            return;
+        setHouveErro(false); // O sistema assume que o usuario fez tudo conforme o esperado
+        
+        // Inicializando o objeto de erros
+        let novosErros = {
+            erroNome: "",
+            erroCPF: "",
+            erroEmail: "",
+            erroSenha: "",
+            erroSenhaConfirmacao: "",
+        };
+    
+        // Verificando os campos e populando os erros
+        if (!valorHTML.Nome) novosErros.erroNome = "Esta caixa não foi preenchida corretamente";
+        if (!valorHTML.CPF) novosErros.erroCPF = "Esta caixa não foi preenchida corretamente";
+        if (!valorHTML.Email) novosErros.erroEmail = "Esta caixa não foi preenchida corretamente";
+        if (!valorHTML.Senha) novosErros.erroSenha = "Esta caixa não foi preenchida corretamente";
+        if (!valorHTML.SenhaConfirmacao) novosErros.erroSenhaConfirmacao = "Esta caixa não foi preenchida corretamente";
+    
+        if (valorHTML.CPF && valorHTML.CPF.length < 12) {
+            novosErros.erroCPF = "Seu CPF é menor do que 12 dígitos.";
         }
-        if(valorHTML.CPF.length < 12){
-            novosErros.CPF = "Seu cpf é menor do que 12 digitos";
-        } 
-        if(!validarEmail(valorHTML.Email)){
-            novosErros.Email = "Este email é invalido."
+    
+        if (valorHTML.Email && !validarEmail(valorHTML.Email)) {
+            novosErros.erroEmail = "Este email é inválido.";
         }
-        if(valorHTML.Senha.length < 8){
-            novosErros.Senha = "A senha informada é menor do que 8 digitos. Digite outro.";
+    
+        if (valorHTML.Senha && valorHTML.Senha.length < 8) {
+            novosErros.erroSenha = "A senha informada é menor do que 8 dígitos. Digite outra.";
         }
-        if(valorHTML.Senha != valorHTML.SenhaConfirmacao){
-            novosErros.SenhaConfirmacao = "A senha de confirmação não é igual a senha anterior.";
+    
+        if (valorHTML.Senha !== valorHTML.SenhaConfirmacao) {
+            novosErros.erroSenhaConfirmacao = "A senha de confirmação não é igual à senha anterior.";
         }
-
+    
+        // Atualizando o estado com os novos erros
         setErros(novosErros);
-
-        // Verifica se há erros antes de registrar
-        const temErros = Object.values(novosErros).some((erro) => erro !== "");
-        if (!temErros) {
-            // Simula o cadastro do usuário
+    
+        // Verificando se houve algum erro
+        const houveErrosDetectados = Object.values(novosErros).some(erro => erro !== "");
+        setHouveErro(houveErrosDetectados);
+    
+        // Realiza o cadastro se não houver erros
+        if (!houveErrosDetectados) {
             setUsuario(valorHTML);
-            console.log(usuario)
             window.alert("Usuário cadastrado com sucesso!");
             navegador("/TelaConta");
         }
-    }
+
+    };    
 
     const validarEmail = (email) => {
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -100,32 +124,32 @@ const Cadastro = () => {
                     <div>
                         <TextField required helperText={erros.erroNome} label="Nome" name="Nome" 
                         value={valorHTML.Nome} onChange={handleChange} variant="outlined"
-                        sx={estiloCampo}/>
+                        sx={estiloCampo} error={houveErro && (erros.erroNome !== "")}/>
                     </div>
 
                     <div>
                         <TextField required helperText={erros.erroEmail} label="Email" name="Email" 
                         value={valorHTML.Email} onChange={handleChange} variant="outlined" 
-                        sx={estiloCampo}/>
+                        sx={estiloCampo} error={houveErro && (erros.erroEmail !== "")}/>
                     </div>
 
                     <div>
-                        <TextField required helperText={erros.erroCPF} label="CPF" name="CPF" 
+                        <TextField required helperText={erros.erroCPF} label="CPF" name="CPF"
                         value={valorHTML.CPF} onChange={handleChange} variant="outlined" slotProps={{ htmlInput: { maxLength: 12,  /* Limita o número de caracteres para 50*/ }}} 
-                        sx={estiloCampo}/>
+                        sx={estiloCampo} error={houveErro && (erros.erroCPF !== "")}/>
                     </div>
                     
 
                     <div>
                         <TextField required helperText={erros.erroSenha} type="password" label="Senha" name="Senha" 
                         value={valorHTML.Senha} onChange={handleChange} variant="outlined"
-                        sx={estiloCampo}/>
+                        sx={estiloCampo} error={houveErro && (erros.erroSenha !== "")}/>
                     </div>
                     
                     <div>
                         <TextField required helperText={erros.erroSenhaConfirmacao} type="password" label="SenhaConfirmacao"
                         name="SenhaConfirmacao" value={valorHTML.SenhaConfirmacao} onChange={handleChange} variant="outlined"
-                        sx={estiloCampo}/>
+                        sx={estiloCampo} error={houveErro && (erros.erroSenhaConfirmacao !== "")}/>
                     </div>
 
                     {/* Cadastra um novo usuário.*/}

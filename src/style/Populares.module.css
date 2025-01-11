@@ -1,32 +1,118 @@
+/* Estilização da pagina populares e dos jogos utilizados*/
+
+.secao {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
 .container_flex_jogos_widescreen {
+    position: relative;
+    width: auto;
+    height: auto;
     display: flex;                  /* Define o contêiner como flex */
     flex-direction: column;         /* Alinha os itens verticalmente */
+    justify-content: center;
+    text-align: center;
     gap: 5rem;                      /* Espaçamento entre os itens */
     align-items: center;            /* Alinha os itens ao centro horizontalmente */
     padding: 20px;                  /* Adiciona padding ao redor do contêiner */
     background-color: #FBF6F0;      /* Cor de fundo */
 }
+
+.position_relative{
+    position: relative;
+}
+
+.posicaoPopularidade1 {
+    border: 2px solid #4B626C;
+    background-color: #4B626C;
+    border-radius: 100%;
+    padding: 1rem;
+    color: #FBF6F0;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+}
+
 .item {
+    position: relative;
+    height: 100%;
+    width: 100%;
     display: flex;                  /* Flex dentro de cada item */
+    flex-direction: row;
+    justify-content: center;
     align-items: center;            /* Alinha imagem e texto verticalmente */
-    gap: 10px;                      /* Espaçamento entre imagem e texto */
+    gap: 3rem;                      /* Espaçamento entre imagem e texto */
     padding: 10px;
 }
 .item img {
     object-fit: cover;              /* Garante que a imagem preencha o espaço corretamente */
-    width: 50%;
+    width: 479px;
     height: 50%;
 }
 
-.texto_container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+.texto {
+    text-align: center;
     width: 50%;
     font-size: 20px;
     color: #4B626C;
 }
 
+.texto > p {
+    text-justify: inter-word;
+    text-align: justify;
+}
+
 .tituloH1, .fraseP {
     color: #4B626C;
+}
+
+.tituloH1 {
+    font-size: 36px;
+}
+
+.texto > h2 {
+    font-size: 36px;
+    color: #4B626C;
+}
+
+@media (max-width: 930px){
+    .texto{
+        width: 100%;
+        padding: 1rem;
+        line-height: 2rem;
+    }
+
+    .item{
+        flex-direction: column;
+    }
+
+    .item .position_relative{
+        order: 1;
+    }
+
+    .item .texto {
+        order: 2;
+    }
+
+    .item img {
+        object-fit: cover;              /* Garante que a imagem preencha o espaço corretamente */
+        width: 322px;
+        height: 190px;
+    }
+
+    .container_flex_jogos_widescreen{
+        padding: 10px;
+    }
+
+    .posicaoPopularidade1 {
+        padding: 0.5rem;
+        left: -20px;
+        top: -20px;
+    }
+
+    .texto > h2 {
+        font-size: 24px;
+    }
 }

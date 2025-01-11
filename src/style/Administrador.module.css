@@ -40,3 +40,10 @@ body, html {
     color: #4B626C;
     font-size: 32px;
 }
+
+@media screen and (max-width: 900px) {
+
+    .containerGrid{
+        grid-template-columns: 1fr;
+    }
+}
